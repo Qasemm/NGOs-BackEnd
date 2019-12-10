@@ -1,5 +1,10 @@
+
+
 function hiddenDivContentCourses(){
-    document.getElementsByClassName('tasksForAdmin').style.display='none';
+    document.getElementById('tasksForAdmin').style.display='block';
 }
 
+document.getElementById("close").addEventListener('click', function closed(){
+    document.getElementById('tasksForAdmin').style.display='none';
 
+});
