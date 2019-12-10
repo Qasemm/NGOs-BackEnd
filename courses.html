@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Courses</title>
+  <link rel="stylesheet" href="home.css">
+  <!--Styling nav bar-->
+  <link rel="stylesheet" href="courses.css">
+  <!--Styling Page Courses-->
+</head>
+
+<body>
+  <ul>
+    <!--nav bar-->
+    <li><a href="#home">Home</a></li>
+    <li><a href="courses.html">Courses</a></li>
+    <li><a href="Trainer.html">Trainer</a></li>
+    <li><a href="Profile.html">Profile</a></li>
+  </ul>
+  <div>
+    <!--This div content marquee name for origination and picture for it-->
+    <div id="marquee">
+      <marquee behavior="" direction="right"> Hello World </marquee>
+    </div>
+    <img src="logo.png" alt="" id="logo">
+  </div>
+  <button class="addCourse" onclick="hiddenDivContentCourses()">addCourse</button>
+  <div class="tasksForAdmin">
+    <div class="contentCourse">
+
+      <form id="form" action="POST">
+
+        <span id="idCourse">ID Course: <input type="text" placeholder="Enter ID Course"></span>
+
+        <span id="spanNameCourse">name Course: <input type="text" id="nameCourse" placeholder="nameCourse"></span>
+        <br>
+        <pre class="pre">
+
+          <span><b>Desecration Course</b></span>
+          
+          <textarea name="" id="contentDesc" cols="42" rows="15" rows="10"></textarea>
+          
+        </pre>
+
+        <div class="timer">
+
+          <pan>Start Time</pan><br>
+
+          <span> <input type="datetime-local" id="startTime"></span><br><br>
+
+          <span>End Time</span><br>
+
+          <span><input type="datetime-local" id="endTime"></span>
+
+        </div>
+        <input type="file">  
+
+
+
+
+
+      </form>
+
+    </div>
+  </div>
+  <script src="courses.js"></script>
+</body>
+
+</html>

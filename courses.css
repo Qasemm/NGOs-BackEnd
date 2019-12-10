@@ -1,0 +1,55 @@
+#marquee {
+    width: auto;
+    height: auto;
+    background-color: coral;
+    font-size: large;
+    align-content: center;
+}
+
+#logo {
+    float: right;
+    margin-top: -63px;
+    margin-right: 2px;
+    width: 40px;
+}
+.tasksForAdmin{
+    /* display: none; */
+}
+.addCourse {}
+
+.contentCourse {
+    border: 1px solid green;
+    visibility:visible;
+}
+
+.contentCourse>form {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#spanNameCourse {
+    margin-left: 300px;
+}
+#idCourse{
+    margin-left:60px;
+}
+.pre{
+    margin-left: -32px;
+}
+.pre > span{
+    margin-left: 15px;
+    font-size: 15px;
+
+}
+#contentDesc{
+   
+}
+.timer{
+    position: fixed;;
+    margin-left:50% ;
+margin-top: -20%;
+}
+
+
+
