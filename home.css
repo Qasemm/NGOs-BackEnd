@@ -1,3 +1,6 @@
+body{
+  background-color: #f0f2f2 ;
+}
 ul {
   list-style-type: none;
   margin: 0;
@@ -19,9 +22,55 @@ li a {
 }
 
 li a:hover:not(.active) {
-  background-color: rgb(184, 35, 35);
+  background-color: gray;
 }
 
 .active {
   background-color: #4CAF50;
+}
+ul li {display: inline-block;}
+ul li:hover {background:gray;}
+ul li:hover ul {display: block;}
+ul li ul {
+  position: absolute;
+  width: 78px;
+  display: none;
+}
+ul li ul li { 
+  background:gray; 
+  display: block; 
+}
+ul li ul li a {
+  display:block ;
+
+} 
+ul li ul li:hover {background: #666;}
+.courses{
+  
+    width: 80%;
+    margin: auto;
+
+}
+.title{
+  text-align: center;
+}
+
+.curses1 {
+  width: 20% ;
+    height: 30%;
+    background-color: #ffffff;
+    margin: 10px;
+    float: left;
+    border-radius: 10px;
+    cursor: pointer;
+    padding-left: 25px;
+  
+}
+.curses1:hover{
+  transform: scale(1.05);
+
+}
+.show{
+  margin-top: 30%;
+  margin-left: 45%;
 }
