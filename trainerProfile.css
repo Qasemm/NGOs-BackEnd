@@ -5,6 +5,12 @@
    /* min-height: .1px;
     width: 40%; */
     background-color: white;
+    transition: 0.6s;
+}
+
+.textBio{
+    width:400px ;
+    height: 200px;
 }
 .profileImg{
     width: 200px;
@@ -18,6 +24,22 @@
     float: left;
     margin-top: 45px;
     margin-left: 4%;
+}
+.savebtn{
+	text-align: center;
+	margin-top: 20px;
+	background-color: green;
+	margin-left: 33%;
+	height: 38px;
+	width: 62px;
+	border-radius: 10px
+}
+.Canclebtn{
+	text-align: center;
+	background-color: gray;
+	height: 38px;
+	width: 62px;
+	border-radius: 10px
 }
 body{
     background-color: #f0f2f2 ;
