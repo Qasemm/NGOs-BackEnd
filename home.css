@@ -1,50 +1,20 @@
 body{
   background-color: #f0f2f2 ;
 }
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
+.plus{
+  font-size: 24px;
+    font-size: 45px;
+  position: fixed;
+  font-size: 35px;
+      border-radius: 112%;
+    cursor: pointer;
+  color: rgb(78, 78, 223);
+  margin-left:96%;
+}
+.plus:hover{
+  color: rgb(5, 5, 129);
 }
 
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover:not(.active) {
-  background-color: gray;
-}
-
-.active {
-  background-color: #4CAF50;
-}
-ul li {display: inline-block;}
-ul li:hover {background:gray;}
-ul li:hover ul {display: block;}
-ul li ul {
-  position: absolute;
-  width: 78px;
-  display: none;
-}
-ul li ul li { 
-  background:gray; 
-  display: block; 
-}
-ul li ul li a {
-  display:block ;
-
-} 
-ul li ul li:hover {background: #666;}
 .courses{
   
     width: 80%;
