@@ -1,70 +1,41 @@
-body{
-    background-color: rgba(120, 75, 192, 0.685);
-}
-#marquee {
-    width: auto;
-    height: auto;
-    background-color: coral;
-    font-size: large;
-    align-content: center;
+.body {}
+
+section {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+
+
 }
 
-#logo {
-    float: right;
-    margin-top: -63px;
-    margin-right: 2px;
-    width: 40px;
-}
-.tasksForAdmin{
-    /* display: none; */
-    border: 1px solid green;
-    visibility:visible;
-    background-color: rgb(223, 189, 128);
-    margin-left:140px;
-    width: 75%;
-}
-.addCourse {
-    margin-top:10px ;
-    margin-left: 10px;
-    margin-bottom: 10px;
-}
-.close{
-  font-size: 2em;
-  cursor: pointer;
-  top: -20px;
-  right: 10px;
-  position: absolute;
-}
-
-.contentCourse{
-    margin-left: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    position: relative;
-}
-
-#spanNameCourse {
-    margin-left: 300px;
-}
-#idCourse{
-    margin-left:60px;
-}
-.pre{
-    margin-left: -32px;
-}
-.pre > span{
+.contentNameCourse {
     margin-left: 15px;
-    font-size: 15px;
-
+    border-top: solid;
+    border-bottom: solid;
+    padding: 5px;
+    width: 100%;
+    border-color: lavender;
 }
-#contentDesc{
+
+
+
+
+
+.inputField {
+    /* margin-bottom: 15px; */
+    border-color: white;
+    width: 98%;
+    height: 25px;
+    border: 1px solid #e3ecf0;
+    background: #fff;
+    padding: 5px;
+    clear: both;
    
 }
-.timer{
-    position: fixed;;
-    margin-left:50% ;
-margin-top: -20%;
+h4{
+    margin-bottom: 0px;
 }
 
-
-
+textarea{
+width: 100%;
+}
