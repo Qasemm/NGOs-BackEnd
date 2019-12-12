@@ -1,4 +1,6 @@
-.body {}
+body {
+    
+}
 
 section {
     margin: auto;
@@ -11,7 +13,7 @@ section {
 .contentNameCourse {
     margin-left: 15px;
     border-top: solid;
-    border-bottom: solid;
+    border-bottom: 0px solid;
     padding: 5px;
     width: 100%;
     border-color: lavender;
@@ -39,3 +41,7 @@ h4{
 textarea{
 width: 100%;
 }
+#range_weight{
+    width: 86%;
+}
+
