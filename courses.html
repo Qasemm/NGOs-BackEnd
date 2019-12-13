@@ -6,63 +6,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Courses</title>
-  <link rel="stylesheet" href="home.css"><!--Styling nav bar-->
-  <link rel="stylesheet" href="courses.css"> <!--Styling Page Courses-->
-  <link rel="stylesheet" href="likeaboss.css" />
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-		<script src="likeaboss.js" type="text/javascript"></script>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				$("textarea").likeaboss();
-			});
-		</script>
- </head>
+  <link rel="stylesheet" href="home.css">
+  <!--Styling nav bar-->
+  <link rel="stylesheet" href="courses.css">
+  <!--Styling Page Courses-->
+
+</head>
+
 <body>
-  <ul> <!--nav bar-->
+  <ul>
+    <!--nav bar-->
     <li><a href="#home">Home</a></li>
     <li><a href="courses.html">Courses</a></li>
     <li><a href="Trainer.html">Trainer</a></li>
     <li><a href="Profile.html">Profile</a></li>
   </ul>
-  <div>
-   
-    <div id="marquee"> <!--This div content marquee name for origination and picture for it-->
-      <marquee behavior="" direction="right"> Hello World </marquee>
+  <section center>
+    <div class="
+  title">
+      <h1 id="title">Add A Course</h1>
     </div>
+    <div class="contentNameCourse">
+      <input type="text" class="inputField" placeholder="Name">
+    </div>
+    <div class="contentNameCourse">
+      <input type="datetime-local" class="inputField" placeholder="Name">
+    </div>
+    <div class="contentNameCourse">
+      <input type="datetime-local" class="inputField" placeholder="Name">
+    </div>
+    <div class="contentNameCourse">
+      <input type="text" class="inputField" placeholder="location">
+    </div>
+    <div class="contentNameCourse">
+      <h4>number of seats</h4>
+      <input type="range" name="weight" id="range_weight" value="5" min="1" max="100"
+        oninput="range_weight_disp.value = range_weight.value">
+      <output id="range_weight_disp"></output>
+    </div>
+    <div class="contentNameCourse">
+      <textarea name="" id="desc" cols="30" rows="20"></textarea>
+    </div>
+  </section>
 
-    <img src="logo.png" alt="" id="logo">
-  </div>
-
-  <button class="addCourse" onclick="hiddenDivContentCourses()">addCourse</button>
-
-  <div class="tasksForAdmin" id="tasksForAdmin">
-    <div class="contentCourse">
-<sapn class="close" id="close">&#215;</sapn>
-        <span id="idCourse">ID Course: <input type="text" placeholder="Enter ID Course"></span>
-
-        <span id="spanNameCourse">name Course: <input type="text" id="nameCourse" placeholder="nameCourse"></span>
-        <br>
-        <pre class="pre">
-
-               
-          <div style="width: 250px;margin-top: -80px;margin-left: 100px;margin-bottom: 1px;">
-              <h1 style="font-family: arial;font-size: 20px;">About Course</h1>
-              <textarea id="boss" style="width: 235px;margin-top: -1px; height:150px"></textarea>
-            </div>
-          
-        </pre>
-
-        <div class="timer">
-
-          <pan>Start Time</pan><br>
-
-          <span> <input type="datetime-local" id="startTime"></span><br><br>
-
-          <span>End Time</span><br>
-
-          <span><input type="datetime-local" id="endTime"></span>
-  </div>
-  
 </body>
 <script src="courses.js"></script>
+
 </html>
