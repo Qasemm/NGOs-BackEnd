@@ -15,7 +15,8 @@
             <div   class="profile"  >
 
                <div class="profileImg">
-                    <img src="user_icon.jpg" alt="">
+                    <img src="user_icon.jpg" alt="" id="preview">
+                    <input type="file" id="filetag">
                 </div>
                 <div  class="infoProfile" >
                     <h3>Trainer one</h3>
@@ -26,11 +27,61 @@
                 </div>
             </div>
             <div class="Bio">
-                <h2>Trainer Name <img  class="EditIcon" src="iconfinder_edit.png"></h2>
+                <h2>Trainer Name <img id="EditId" class="EditIcon" src="iconfinder_edit.png"></h2>
                    <!--  <textarea>aaaaaaaaaaaaaaaaaaaaa </textarea>  -->
                    <h3>Bio: </h3>
-                   <p>Alan Meban offers social media training, coaching and consultancy, often with small businesses and charities or academic institutions. He is a freelance journalist who reports from civic, academic and political events, and chairs discussions for Slugger O’Toole, reviews films and theatre performances on his blog Alan in Belfast, and live-tweets, (multi-camera) streams and records lectures and conferences. In the past he has helped individuals within organisations improve their ability to handle radio interviews, and coached comms teams through the process of making videos.</p>
+                   <p id="BioId">Alan Meban offers social media training, coaching and consultancy, often with small businesses and charities or academic institutions. He is a freelance journalist who reports from civic, academic and political events, and chairs discussions for Slugger O’Toole, reviews films and theatre performances on his blog Alan in Belfast, and live-tweets, (multi-camera) streams and records lectures and conferences. In the past he has helped individuals within organisations improve their ability to handle radio interviews, and coached comms teams through the process of making videos.</p>
+                   <button type="submit" id="save" class="savebtn">save</button>
+                   <button type="submit" id="cancle" class="Canclebtn">Cancle</button>
                 </div>
-                <script src="main.js"></script>
+                
+                <script >
+            document.getElementById('EditId').addEventListener('click',EditProfile);
+   document.getElementById('save').style.visibility="hidden";
+   document.getElementById('cancle').style.visibility="hidden";
+
+               function EditProfile()
+               {
+                document.getElementById('save').style.visibility="visible";
+   document.getElementById('cancle').style.visibility="visible";
+console.log(document.getElementById('BioId').value);
+
+
+var paragraph = document.getElementById("BioId");
+paragraph.addEventListener('click',EditBio);
+function EditBio()
+{
+    
+var text = paragraph.textContent ? paragraph.textContent : paragraph.innerText;
+console.log(text); 
+
+document.getElementById('BioId').innerHTML='<textarea class="textBio"  autofocus>'+text+'</textarea>';
+
+}
+
+
+               }
+
+                var fileTag = document.getElementById("filetag"),
+    preview = document.getElementById("preview");
+    
+fileTag.addEventListener("change", function() {
+  changeImage(this);
+});
+
+function changeImage(input) {
+  var reader;
+
+  if (input.files && input.files[0]) {
+    reader = new FileReader();
+
+    reader.onload = function(e) {
+      preview.setAttribute('src', e.target.result);
+    }
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+                </script>
         </body>
         </html>
