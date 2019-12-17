@@ -9,31 +9,31 @@
 </head>
 <body>
     <div class="continer">
-        <div class="menu">
+        <div class="menu" >
              
      </div>
         <div class="Trainer_info">
              <h3>Name</h3>
-            <input class="" type="text" name="name" ><br>
+            <input class="" id="inputName" type="text" name="name" ><br>
             <h3>E-mail</h3>
-            <input type="email" name="email "><br>
+            <input type="email" name="email" id="inputEmail"><br>
             <h3>Contact Number</h3> 
-            <input type="tel" name="phone" ><br>
+            <input type="tel" name="phone" id="inputNumber"><br>
             <h3>Address </h3>  
-            <input class="" type="text" name="address" ><br>
+            <input class="" type="text" name="address" id="inputAddress"><br>
             <h3>Trainer Profile Photo</h3>
             <p class="guide">Attach File Below to upload trainer profile <br>
-                <input type="file" name="img"><br></p> 
+                <input type="file" name="img" id="inputimg"><br></p> 
         
             <h3>Short Bio</h3> 
-            <textarea>Tell us about you as a Trainer: Your Background, Qualifications, Skills and Experience. 
+            <textarea id="inputTextarea">Tell us about you as a Trainer: Your Background, Qualifications, Skills and Experience. 
                  </textarea><br>
-            <button type="submit" class="savebtn">save</button>
+            <button onclick="renderTrainees();" class="savebtn">save</button>
             <button type="submit" class="Canclebtn">Cancle</button>
         </div>
 ​
     </div>
-​
+​<script src="./NewTrainer.js"></script>
 </body>
 </html>
 ​
