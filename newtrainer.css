@@ -6,8 +6,16 @@
 	margin-top: 20px;
 	margin-left: 10%;
 	margin-right: 10%;
-	background-color: #959595;
+	background-color:lightgrey;
 	padding: 2%;
+}
+.btn{
+	text-align: center;
+}
+.profileImg{
+	width: 200px;
+	cursor: pointer;
+	margin-left: 2%;
 }
 button{
 	border-style: none;
@@ -15,6 +23,23 @@ button{
 .guide{
     margin-left: 2%;  
 }
+.savebtn{
+	background-color:#0793C8;
+	height: 38px;
+	width:155px;
+	border-radius: 10px;
+	outline: none;
+	font-size: 16px;
+}
+.Canclebtn{
+	
+	font-size: 16px;
+	height: 38px;
+	width:155px;
+	border-radius: 10px;
+	outline: none;
+}
+/*
 .savebtn{
 	text-align: center;
 	margin-top: 20px;
@@ -30,7 +55,7 @@ button{
 	height: 38px;
 	width: 62px;
 	border-radius: 10px
-}
+}*/
 ​
 label{
 	margin-top: 20px;
@@ -40,20 +65,24 @@ h3{
 	margin-left: 2%;
 }
 input{
-	/* margin-top: 20px;*/
 	margin-bottom: 12px;
 	margin-left: 2%;
 	width: 85%;
 	outline: none;
-	height: 20px;
+	/*border-radius: 20px;*/
+    border-style: none;
+	height: 25px;
+	font-size: 14px;
+	padding: 10px;
 }
 textarea{
-	/*  margin-top: 20px;*/
 	margin-bottom: 12px;
 	margin-left: 2%;
 	font: 14px;
-	width: 85%;
-	height: 80px;
+	width: 90%;
+	height:120px;
+	padding: 10px;
+outline: none;
 }
 ul {
 	list-style-type: none;
@@ -73,8 +102,8 @@ li a {
 	text-decoration: none;
 }
 li a:hover:not(.active) {
-	background-color: rgb(184, 35, 35);
-}
+	background-color: gray;
+  }
 .active {
 	background-color: #4CAF50;
 }
