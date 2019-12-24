@@ -1,12 +1,4 @@
-// var slideIndex = 1;
 
-// arr=[{
-//     name : "ahmad ammoura",
-//     Email: "ammoura575@gmail.com",
-//     number:"0796670230",
-//     photo :"me.jpg",
-//     location : "irbed/jordan"
-// }];
 
 let trainees = [
     {
