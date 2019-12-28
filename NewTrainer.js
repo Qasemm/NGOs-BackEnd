@@ -10,18 +10,49 @@ function changeImage(input) {
    reader.onload = function(e) {
      preview.setAttribute('src', e.target.result);
    }
-   reader.readAsDataURL(input.files[0]);
+ reader.readAsDataURL(input.files[0]);
  }}
  document.getElementById('save').addEventListener('click',add);
+////////////////////////////////////
+ 
+input   = document.getElementById("filetag");
 
+
+input.onchange = function () {
+  var file = input.files[0],
+    img = new FileReader();
+    
+
+  img.onloadend = function () {
+    var b64 = img.result.replace(/^data:.+;base64,/, '');
+
+    console.log(b64); 
+  };
+
+  img.readAsDataURL(file);
+};
+
+
+
+
+
+/////////////
 function add(){
 name    = document.getElementById("name").value;
 email   = document.getElementById("email").value;
 num     = document.getElementById("num").value;
 address = document.getElementById("address").value;
-photo   = document.getElementById("filetag").value
+photo   = document.getElementById("filetag");
 
-if (name || email || num || address  === "" ){
+
+
+
+
+
+
+
+
+if (name  == "" ){
   alert("add some information")
 }else{
 
@@ -37,7 +68,7 @@ if (name || email || num || address  === "" ){
           email : email,
           num : num ,
           address : address,
-          photo : photo
+          photo : b64
         })
 
 })
