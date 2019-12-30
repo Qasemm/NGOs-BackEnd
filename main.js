@@ -22,7 +22,7 @@ body:JSON.stringify({
     title:text.value,
     location:locations.value,
     desctiption:desc.value,
-    dates:date.value,
+    dates:date,
     triner:trinername.value,
     number_of_seats:range_weight.value
 })
