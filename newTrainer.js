@@ -35,22 +35,16 @@ input.onchange = function () {
   img.readAsDataURL(file);
 };
 
-///
-x = "bashar ahmad ammoura"
-btoa(x)
-
-console.log(btoa(x))
-
 
 /////
 function add(){
-  console.log(b64); 
 name    = document.getElementById("name").value;
 email   = document.getElementById("email").value;
 num     = document.getElementById("num").value;
 address = document.getElementById("address").value;
-photo   = document.getElementById("filetag").value
-
+// photo   = document.getElementById("filetag").value
+bio     = document.getElementById("bio").value;
+console.log(b64)
 if (name === "" ){
   alert("add some information")
 }else{
@@ -67,11 +61,12 @@ if (name === "" ){
           email : email,
           num : num ,
           address : address,
-          // photo : b64
+          photo : b64,
+          bio : bio
         })
 
 })
-        .then(response=>response.json())
+        .then(response=>response)
         .then((data) => {
         console.log(data);
         })
