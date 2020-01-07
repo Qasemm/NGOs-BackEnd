@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NGo Profile</title>
+		 	<link rel="stylesheet" type="text/css" href="ProfileNGO.css"> 
+</head>
+<body>
+<div>
+	<ul>
+    <li><a class="bar" href="../Course/index.html">Home</a></li>
+    <li><a class="bar" href="../Trainer/trainers.html">Trainer</a></li>
+    <li><a class="bar" href="ProfileNGO.html">Profile</a></li>
+      <li class="right"><a>log out</a></li>
+</ul>	
+</div>
+
+<div class="container">
+    <div   class="profile"  >
+     <div class="profileImg">
+       <label>
+      <img src="img/user_icon.jpg" alt="" id="preview">
+     
+      <input onclick="changeImage()"  class="input" type="file" id="filetag" style="visibility: hidden;"></label>
+    </div>
+​
+    <div  class="infoProfile" id="infoProfile" >
+        <div>
+            <input type="text" class="input" value="NGO Name"></input>
+</div>
+<div>
+    <input type="text" class="input" value="www.ngo.com"></input>
+</div>
+<div>
+    <input type="email" class="input" value="ngo@gmail.com" readonly></input>
+</div>
+<div class="txt">
+<a title="Change Password" class="linkPassword" href="#">Password </a>
+</div>
+    </div>
+  </div>
+  <div class="Bio">
+    <h2>NGO Name <img id="EditId" class="EditIcon" src="img/iconfinder_edit.png" onclick="change_value()"></h2>
+    <h3>Bio: </h3>
+    <textarea class="input" id="BioId">aaaaaaaaaaaaaaaaaaaa</textarea>
+    <div class="btn">
+            <button type="submit" id="save" class="savebtn" onclick="save()">save</button>
+            <button type="submit" id="cancle" class="Canclebtn">Cancle</button>
+    </div>
+  </div>
+  </div>
+  <script src="ProfileNGO.js"></script>
+
+</body>
+</html>

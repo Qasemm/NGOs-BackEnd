@@ -1,3 +1,17 @@
+let close_item=document.getElementsByClassName("remove");
+enable_close();
+function enable_close(){
+  for(let i=0;i<close_item.length;i++){
+    close_item[i].addEventListener("click",e=>{
+    e.target.parentElement.parentElement.parentElement.remove();
+  })
+  }
+};
+document.getElementById("desc").addEventListener('click',trainerProfile);
+  function trainerProfile(){
+    window.location = 'trainerProfile.html';
+  }
+  
 gettrainers();
 
 function gettrainers(){
