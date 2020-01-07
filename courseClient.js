@@ -1,43 +1,28 @@
 
-/*const contentNameCourse=document.getElementById('contentNameCourse');
-const date=document.getElementById('dates');
+const contentNameCourse=document.getElementById('contentNameCourse');
+const date_begin=document.getElementById('date_begin');
+const date_end=document.getElementById('date_end');
 const locations=document.getElementById('location');
 const range_weight=document.getElementById('range_weight');
 const desc=document.getElementById('desc');
 const trinername =document.getElementById('trinername');
-
-*/
-// let save = document.getElementById("save");*/
-fetch('http://localhost:3000/courses')
-{
-    method:'GET',
-
-}
-  .then(res=>{
-        res.json()
-    }).then(data=>{
-    console.log(data);
-document.getElementById('Courses').innerHTML+= '<div  class="list">'+ ' <h3>'+ title +'<img class="remove" src="img/error.png"></h3>'
-  
-    });
-
 document.getElementById("save").addEventListener("click" , addCoures);
 function addCoures() {
-    let id;
-const title=document.getElementById('name').value;
-console.log(title);
+    const setOfNumder = /[0-9]/;
+    const checkName = /^[a-z]|[0-9]/i;
+    var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+    if(checkName.test(contentNameCourse) == true && dateformat.test(dateBegin) == true  && dateformat.test(dateEnd) == true && setOfNumder.test(range_weight) == true ){
 let header=new Headers();
 header.append("content-type", "application/json");
 fetch ('http://localhost:3000/courses',{
-method: 'post',
+method: 'POST',
 headers:header,
 body:JSON.stringify({
-    title:title,
-    id:"1"
+    title:contentNameCourse.value,
    location:locations.value,
     desctiption:desc.value,
-    dates:date.value,
-    triner:trinername.value,
+    date_begin:date_begin.value,
+    date_end:date_end.value,
     number_of_seats:range_weight.value
 })
     }   
@@ -45,6 +30,10 @@ body:JSON.stringify({
         res.json()
     })
     .then(data=>{
-        console.log(data)
-    });
+        console.log(data);
+        
+    });}
+    else{
+        console.log('error');
+    }
 }
