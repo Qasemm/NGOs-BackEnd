@@ -7,10 +7,10 @@ function enable_close(){
   })
   }
 };
-document.getElementById("desc").addEventListener('click',trainerProfile);
-  function trainerProfile(){
-    window.location = 'trainerProfile.html';
-  }
+// document.getElementById("desc").addEventListener('click',trainerProfile);
+//   function trainerProfile(){
+//     window.location = 'trainerProfile.html';
+//   }
   
 gettrainers();
 
@@ -56,10 +56,7 @@ for (let i = 0; i < divs.length; i++) {
     })
 }
 
-// let divs=document.getElementsByClassName("list")
-// for (let i = 0; i < divs.length; i++) {
-//   divs[i].addEventListener("click", e => {
-//     console.log(e.target.getAttribute.id_trainer)
-    
-//   })
-// }
+// document.getElementsByClassName("list").addEventListener('click',trainerProfile);
+//   function trainerProfile(){
+//     window.location = 'trainerProfile.html';
+//   }
