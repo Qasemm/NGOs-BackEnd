@@ -212,6 +212,7 @@ img{
  }
 input{
   margin-left: 10px;
+  border-bottom-style: solid;
 }
 .AddIcon{
   width: 50px;
@@ -219,10 +220,7 @@ input{
   float: right;  
     margin-right: 50px;
 }
- /* img{
-     width: 100%;
-     border:3px none;
-     cursor: pointer;
+
 
 
 

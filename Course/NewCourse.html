@@ -20,20 +20,26 @@
             <h2>Add New Course</h2>
 
 <h3> course Name</h3>
-<input type="text" id="contentNameCourse" class="input" ></input> 
+<input type="text" id="contentNameCourse" class="input" oninput="checkNameRegExp()"></input> 
+<p class="Name_course_P" id="Name_course_P"></p>
 
 <h3>Date Begin</h3>
-<input type="text" id="date_begin" class="input"></input>
+<input type="text" id="date_begin" class="input" placeholder="mm/dd/yyyy or mm-dd-yyyy" oninput="validatedate()"></input>
+<p class="Date_course_P" id="Date_course_P"></p>
 
 <h3>Date End</h3>
-<input type="text" id="date_end" class="input"></input>
+<input type="text" id="date_end" class="input" placeholder="mm/dd/yyyy or mm-dd-yyyy" oninput="validatedateEnd()"></input>
+<p class="DateEnd_course_P" id="DateEnd_course_P"></p>
 
 <h3>Location</h3>
-<input type="text" id="location" class="input"></input>
+<input type="text" id="location" class="input" oninput="ValidateLocation()"></input>
+<p class="location_course_P" id="location_course_P"></p>
 
 <h3>number of seats</h3>
-<input type="number" id="range_weight" class="input"></input>  
-        </div>
+<input type="number" id="range_weight" class="input" oninput="ValidateNumber()"></input>  
+<p class="Number_Seats_P" id="Number_Seats_P"></p>
+
+</div>
     </div>
     <div class="Bio">
            <h3 >description</h3>
