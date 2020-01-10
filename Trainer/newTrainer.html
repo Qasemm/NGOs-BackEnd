@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>New Trainer</title>
     <link rel="stylesheet" href="newTrainer.css">
-  
-  
+ 
 </head>
 <body>
     <div>
@@ -20,13 +19,22 @@
 </div>
         <div class="Trainer_info">
              <h3>Name</h3>
-            <input class="" id="name" type="text" name="name" ><br>
+            <input class="" id="name" type="text" name="name" oninput="checkNameRegExp()"><br>
+            <p class="Trainer_name_P" id="Trainer_name_P"></p>
+
+
             <h3>E-mail</h3>
-            <input type="email" id="email" name="email "><br>
+            <input type="email" id="email" name="email" oninput="checkEmailRegExp()"><br>
+            <p class="Email_P" id="Email_P"></p>
+
             <h3>Contact Number</h3> 
-            <input type="tel" name="phone" id="num"  ><br>
+            <input type="tel" name="phone" id="num" oninput="ValidateNumber()" ><br>
+            <p class="Contact_number_P" id="Contact_number_P"></p>
+
             <h3>Address </h3>  
-            <input class="" type="text" name="address" id="address" ><br>
+            <input class="" type="text" name="address" id="address" oninput="ValidateAddress()" ><br>
+            <p class="Address_P" id="Address_P"></p>
+
             <h3>Trainer Profile Photo</h3>
             <div class="profileImg">
                     <label>
@@ -39,7 +47,7 @@
                  </textarea><br>
                  <div class="btn">
                   <button type="submit" class="savebtn" id="save" >save</button>
-                  <button type="submit" class="Canclebtn">Cancle</button>   
+                  <button type="submit" class="Canclebtn" id="cancle">Cancle</button>   
                  </div>
             
         </div>

@@ -39,6 +39,8 @@ input{
     height: 25px;
     font-size: 14px;
     padding: 10px;
+    border-bottom-style: solid;
+
 }
 textarea{
     margin-bottom: 12px;
@@ -262,4 +264,7 @@ input{
  }
  .btn{
     margin-top: 90px;
+}
+.Trainer_name_P,.Email_P,.Address_P,.Contact_number_P{
+    color: red;
 }
