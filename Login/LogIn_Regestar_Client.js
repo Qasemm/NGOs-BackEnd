@@ -87,10 +87,10 @@ function checkPasswordRegExp() {
 // for Sign Up and create a new account 
 let header = new Headers();
 header.append('content-type', 'application/json');
+// header.append('authorization' , 'Bearer '+ localStorage.getItem('token'))
 
 
 function RegestarNewAccount() {
-
     fetch( URL + 'register', {
       method: 'post',
       headers: header,
@@ -103,13 +103,14 @@ function RegestarNewAccount() {
       return re.json()
     }).then(data => {
       localStorage.setItem("token",data.token)
-      if(data.msg) {
-        console.log(data.msg)
+      if(data.status == 226) {
+        Email_SignUp_P.innerHTML = "your Email is Exists"
+        Email_SignUp.style.borderBottomColor = "red" 
       }else{
-        Email_SignUp_P.innerHTML = data.status
-        Email_SignUp.style.borderBottomColor = "red"
+        Email_SignUp_P.innerHTML = ""
+        Email_SignUp.style.borderBottomColor = "green" 
       }
-    })
+      })
   Name_SignUp.value = "";
   Email_SignUp.value = "";
   Pass_SignUp.value = "";
@@ -125,24 +126,24 @@ function RegestarNewAccount() {
             password: Pass_LogIn.value
         })
     }).then(re => re.json()).then(data => {
+      console.log(data)
       localStorage.setItem("token" , data.token)
-        if(data.succse) {
+        if(data.status == 200) {
           Pass_LogIn.style.borderBottomColor = 'green';
           Email_LogIn.style.borderBottomColor = 'green';
           Pass_LogIn.value = "";
           Email_LogIn.value = "";
-          div.innerHTML = data.succse;
           
           showName();
   
           MoveToHomePage();
            
-        }else if(data.passWrong) {
-          Pass_LogIn_p.innerHTML = data.passWrong;
+        }else if(data.status == 400) {
+          Pass_LogIn_p.innerHTML = "your password dosen't exists";
           Pass_LogIn.style.borderBottomColor = 'red';
           Pass_LogIn.value = "";
-        }else{
-          Email_LogIn_p.innerHTML = data.EmailWrong;
+        }else if(data.status == 404){
+          Email_LogIn_p.innerHTML = "your email wrong or dosen't exists";
           Email_LogIn.style.borderBottomColor = 'red';
         }
 
