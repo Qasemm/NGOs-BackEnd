@@ -10,9 +10,10 @@ document.getElementById("save").addEventListener("click" , addCoures);
 function addCoures() {
     const setOfNumder = /[0-9]/;
     const checkName = /^[a-z]|[0-9]/i;
-    var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+    const dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
     if(checkName.test(contentNameCourse) == true && dateformat.test(dateBegin) == true  && dateformat.test(dateEnd) == true && setOfNumder.test(range_weight) == true ){
-let header=new Headers();
+
+        let header=new Headers();
 header.append("content-type", "application/json");
 fetch ('http://localhost:3000/courses',{
 method: 'POST',

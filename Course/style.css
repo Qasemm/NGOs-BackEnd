@@ -51,38 +51,8 @@ ul {
 
   }
   .container{
-        margin-left:20%;
-        width: 50%;
-        border: white 1px solid ;
-        border-radius: 10px;
-      } 
-      h2{
-        text-align: center;
-      position: relative;
-      padding-top: 15px;
-      }
-      input{
-        position: relative;
-        padding-right: 30%;
-        padding-left: 10%;
-        height: 20px;
-        margin-left: 18px;
-
-      }
-      textarea{
-        width: 85%;
-        padding-left: 2%;
-        margin-left: 3%;
-        height: 209px;
-        position: relative;
-      }
-.btn{
-    margin-top: 90px;
-    background-color: #F0F2F2 ;
-  }
-
-
-
+				margin-left:30px;
+			} 
   .list{
 width:30%;
 height:200px;
@@ -194,10 +164,6 @@ img{
      border-radius: 10px;
      outline: none;
      font-size: 16px;
-     margin-top: -37px; 
-      position: relative;
-      float: left;
-
  }
  .Canclebtn{
      font-size: 16px;
@@ -208,36 +174,58 @@ img{
      float: right;
     margin-top: -37px;
     margin-right: 100px; 
-    position: relative;
  }
  .link{
      margin-top: 20px;
  }
- 
- .Bio{
-  background-color: #daf0ed7c;
- } 
+ .btn{
+    margin-top: 90px;
+}
+ .textBio{
+     width:400px;
+     height: 200px;
+     border-style: none;
+ }
  #BioId{
     width:400px ;
     height: 300px;
     border-style: none;
- } */
+ }
  .profileImg{
      width: 200px;
      cursor: pointer;
  }
  .infoProfile{
-     background-color: #daf0ed7c;
+     background-color: #ffffff;
  }
- /* .Bio{
+ .Bio{
      width: 40%; 
      float: left;
      margin-left: 4%;
-     height: 300px;
- } */
+     height: 300px; 
+ }
  .profile{
     float: left;
      position: relative;
      background-color: white;
      transition: 0.6s;
  }
+input{
+  margin-left: 10px;
+}
+.AddIcon{
+  width: 50px;
+  height: 50px;
+  float: right;  
+    margin-right: 50px;
+}
+ /* img{
+     width: 100%;
+     border:3px none;
+     cursor: pointer;
+
+
+
+
+
+

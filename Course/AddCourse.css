@@ -1,0 +1,402 @@
+  *{
+  outline: none;
+}
+body{
+    background-color: #F0F2F2 ;
+outline: none;
+  }
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+     background-color:black; 
+    color: black;
+  }
+  h2{
+      text-align: center;
+  }
+  li {
+    float: left;
+  }
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px 16px;
+    text-decoration: none;
+    height:31px;
+    font-family: sans-serif;
+    font-weight:bold;
+
+  }
+  li a:hover:not(.active) {
+   background-color: gray;
+   
+    height: 31px;
+  opacity:0.8;
+  color: white;
+  }
+  a{
+   /* text-decoration:underline;*/
+    color:black;
+  }
+  .right{
+    float: right;
+  }
+ 
+ textarea{
+  width: 287px;
+    height: 36px;
+     margin-bottom: 12px;
+    margin-left: 2%;
+ }
+ .btn{
+   margin-top: 70px;
+ }
+.add{
+  position: relative;
+  cursor: pointer;
+  color: white;
+  margin-left: 961px;
+  margin-top: 0px;
+  width: 30px;
+  font-size: 27px;
+}
+.add:hover{
+  color: rgb(5, 5, 129);
+  cursor: pointer;
+}
+.courses{
+    width: 80%;
+    margin: auto;
+}
+#desc{
+    width: 80%;
+}
+.title{
+  text-align: center;
+}
+.AllCourse{
+  margin-left: auto;
+}
+.cancel{
+  width:10%;
+  margin-left:65% ;
+  margin-top: 5px;
+  display: none;
+}
+.curses1:hover a .cancel{
+  display: inline-block;
+}
+.curses1 {
+    width: 25% ;
+    height: 45%;
+    background-color: #FFFFFF;
+    margin: 10px;
+    float: left;
+    border-radius: 10px;
+    cursor: pointer;
+    padding-left: 25px;
+}
+.curses1:hover{
+  transform: scale(0.6s);
+}
+.show{
+  margin-top: 30%;
+  margin-left: 27%;
+}
+.savebtn{
+    background-color:#0793C8;
+    height: 38px;
+    width:155px;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+
+}
+.Canclebtn{
+    font-size: 16px;
+    height: 38px;
+    width:155px;
+    border-radius: 10px;
+    outline: none;
+}
+.container{
+  margin-left: 20%;
+  margin-right: 20%;
+}
+h3{
+  width: 40%;
+}
+.para{
+  width: 40%;
+  float: right;
+  margin-top: -42px;
+  margin-right: 290px;
+}
+.btn{
+  margin-left: 65px;
+  margin-top: 40px;
+  text-align: center;
+}
+.txt{
+  width: 500px;
+  height: 220px;
+}
+.container{
+    margin-top: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color:lightgrey;
+    padding: 2%;
+}
+label{
+    margin-top: 20px;
+    margin-left: 2%;
+}
+input{
+    margin-bottom: 12px;
+    margin-left: 2%;
+    width: 80%;
+    outline: none;
+    border-style: none;
+    height: 25px;
+    font-size: 14px;
+    padding: 10px;
+    border-bottom-style: solid;
+}
+*{
+	outline: none;
+}
+body{
+    background-color: #F0F2F2 ;
+outline: none;
+  }
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+     background-color:black; 
+    color: black;
+  }
+  li {
+    float: left;
+  }
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px 16px;
+    text-decoration: none;
+    height:31px;
+    font-family: sans-serif;
+    font-weight:bold;
+
+  }
+  li a:hover:not(.active) {
+   background-color: gray;
+   
+    height: 31px;
+	opacity:0.8;
+	color: white;
+  }
+  .Name_course_P,.Date_course_P,.DateEnd_course_P,.Number_Seats_P,.location_course_P{
+    color: red;
+    }
+    .Name_course_P,.Date_course_P,.DateEnd_course_P,.location_course_P,.Number_Seats_P{
+      color: red;
+    }
+ /* a{
+   /* text-decoration:underline;
+    color:black;
+  }
+  .right{
+  	float: right;
+  }
+  h1{
+  	text-align: center;
+  }
+  h3{
+  	margin-top: 10px;
+  	margin-left: 10px;
+  	padding: 10px;
+
+  }
+  .container{
+				margin-left:30px;
+			} 
+  .list{
+width:30%;
+height:200px;
+background-color: red;
+transition: 0.6s;
+background-color: white;
+transform: 0.7s;
+float: left;
+margin: 10px;
+
+  }
+.list:hover{
+	      transform: scale(1.1);
+}
+.remove{
+  width:20px;
+  height: 20px;
+  float: right;
+  margin-top: -13px;
+  padding: 10px;
+    cursor: pointer;
+/* display: none;
+}
+.list:hover a .remove{
+  display: inline-block;
+}
+.MoreInfo{
+	width: 70%;
+	height: 30px;
+	color: white;
+	background-color:#282657;
+  margin-left: 35px;
+	   margin-top: 10px;
+	   border-style: none;
+	     cursor: pointer;
+}
+.MoreInfo:hover{
+	opacity: 0.7;
+}
+p{
+	margin-left: 10px;
+}
+.AllCourses{
+	margin-left: 20px;
+    margin-right: 20px
+}
+.ShowMore{
+	margin-top: 30px;
+	cursor: pointer;
+	width: 60%;
+	height: 50px;
+	margin-left: 200px;
+	text-align: center;
+	align-content: center;
+	background-color: #282657;
+	color: white;
+}
+.addAcountIcon{
+ margin-left:1000px;
+border-style: none;
+  width: 50px;
+  height: 50px;
+}
+.form{
+	width:30%;
+height:200px;
+background-color: #ffffff;
+transition: 0.6s;
+background-color: white;
+transform: 0.7s;
+float: left;
+margin: 10px; 
+cursor: pointer;
+ /*margin: 15 0 0 15;
+}
+.form:hover{
+    transform: scale(1.05);
+
+}
+
+img{
+    width: 100%;
+    margin: 10 0 0 10;
+ /*   border: #ffffff 3px solid;*/
+   /* border-radius: 50%;
+}
+.im{
+    width: 30%;
+    float: left;
+}
+.contnt{
+    width: 60%;
+    height: 100%;
+    background-color: #ffffff;
+    font-family: inherit;
+    border-radius: 10%;
+}
+ .EditIcon{
+     width: 20px;
+     height: 20px;
+     background-color: #f0f2f2 ;
+     cursor: pointer;
+ }
+
+ .savebtn{
+     background-color:#0793C8;
+     height: 38px;
+     width:155px;
+     border-radius: 10px;
+     outline: none;
+     font-size: 16px;
+ }
+ .Canclebtn{
+     font-size: 16px;
+     height: 38px;
+     width:155px;
+     border-radius: 10px;
+     outline: none;
+     float: right;
+    margin-top: -37px;
+    margin-right: 100px; 
+ }
+ .link{
+     margin-top: 20px;
+ }
+ .btn{
+    margin-top: 90px;
+}
+ .textBio{
+     width:400px;
+     height: 200px;
+     border-style: none;
+ }
+ #BioId{
+    width:400px ;
+    height: 300px;
+    border-style: none;
+ }
+ .profileImg{
+     width: 200px;
+     cursor: pointer;
+ }
+ .infoProfile{
+     background-color: #ffffff;
+ }
+ .Bio{
+     width: 40%; 
+     float: left;
+     margin-left: 4%;
+     height: 300px; 
+ }
+ .profile{
+    float: left;
+     position: relative;
+     background-color: white;
+     transition: 0.6s;
+ }
+input{
+  margin-left: 10px;
+}
+.AddIcon{
+  width: 50px;
+  height: 50px;
+  float: right;  
+    margin-right: 50px;
+}
+
+
+*/
+
+
+
+
