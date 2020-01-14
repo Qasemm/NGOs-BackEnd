@@ -1,0 +1,11 @@
+{
+  "name": "FrontEnd_courses",
+  "version": "1.0.0",
+  "main": "courseClient.js",
+  "repository": "https://github.com/TAHANYSHRAA/FrontEnd_courses",
+  "author": "TAHANYSHRAA <tahany.shraa@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
