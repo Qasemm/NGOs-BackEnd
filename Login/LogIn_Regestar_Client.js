@@ -153,8 +153,8 @@ function RegestarNewAccount() {
 }
 
 
-async function  MoveToHomePage() {
-  open("http://www.google.com")
+function  MoveToHomePage() {
+  location.replace("../Course/index.html")
 }
 
   function showName() {
