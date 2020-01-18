@@ -52,3 +52,15 @@ if (input.files && input.files[0]) {
       save_btn.style.display="none";
       cancle_btn.style.display="none";
     }
+    show();
+    function show(){
+      fetch('http://localhost:3000/trainer/'+22, {
+             method: 'GET',
+         })
+         .then(response => response.json())
+         .then(data => {
+           console.log(data)
+          document.getElementById('show1').innerHTML +=' '
+          });
+    
+     }
