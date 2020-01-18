@@ -7,6 +7,16 @@ function enable_close() {
     })
   }
 };
+let divs = document.getElementsByClassName("list")
+for (let i = 0; i < divs.length; i++) {
+  divs[i].addEventListener("click", e => {
+    if (e.target.tagName = "DIV") {
+      console.log(e.target.getAttribute("id"))
+
+    }
+
+  })
+}
 // document.getElementById("desc").addEventListener('click',trainerProfile);
 //   function trainerProfile(){
 //     window.location = 'trainerProfile.html';
@@ -25,72 +35,86 @@ function gettrainers() {
       console.log(data);
       function renderTrainees(data) {
         const htmlArray = data.map(
-          trainer => '<div id = ' + trainer.id + ' class="list"><div id = ' + trainer.id + ' class="im"><img src="http://localhost:3000' + trainer.picture + '" alt=""></div><div id = ' + trainer.id + ' class="im contnt desc"><h3 id = ' + trainer.id + '>' + trainer.name + ' <img class="remove" id = ' + trainer.id + ' src="img/error.png"></h3><p id = ' + trainer.id + ' >' + trainer.email + '</p><p id = ' + trainer.id + ' >' + trainer.mobile + '</p><p id = ' + trainer.id + ' >' + trainer.address + '</p></div></div></a></div>'
+          trainer => '<div class="list"><div  class="im"><img onclick="openProfile()" id = ' + trainer.id + ' src="http://localhost:3000' + trainer.picture + '" alt=""></div><div  class="im contnt desc"><h3 >' + trainer.name + ' <img class="remove" id = ' + trainer.id + '  src="img/error.png"></h3><p>' + trainer.email + '</p><p >' + trainer.mobile + '</p><p>' + trainer.address + '</p></div></div></a></div>'
         );
 
         document.getElementById("container").innerHTML += htmlArray.join('');
 
         enable_close();
 
-
-        function enable_close() {
-          console.log(close_item.length);
-          for (let i = 0; i < close_item.length; i++) {
-            close_item[i].addEventListener("click", e => {
-              console.log(i);
-
-              e.target.parentElement.parentElement.parentElement.remove();
-
-              let x = e.target.id ;
-
-              console.log(x)
-
-        
-              
-
-              const myheaders = new Headers();
-              myheaders.append('Content-Type', 'application/json');
-
-              fetch('http://localhost:3000/trainer',
-                {
-                  method: 'DELETE',
-                  headers: myheaders,
-                  body: JSON.stringify({
-                    id: x
-                  })
-                }).then(Response =>
-                  Response.json())
-                .then(data => {
-                  console.log(data);
-
-                })
-
-            })
-          }
-        };
-        let divs = document.getElementsByClassName("list")
-        for (let i = 0; i < divs.length; i++) {
-          divs[i].addEventListener("click", e => {
-            if (e.target.tagName = "DIV") {
-              console.log(e.target.getAttribute("id"))
-
-            }
-
-          })
-        }
       }
-
       renderTrainees(data);
     })
 }
 
+////////////////
+function enable_close() {
+  console.log(close_item.length);
+  for (let i = 0; i < close_item.length; i++) {
+    close_item[i].addEventListener("click", e => {
+
+      e.target.parentElement.parentElement.parentElement.remove();
+      
+      let x = e.target.id ;
+
+      console.log(x)
+
+      const myheaders = new Headers();
+      myheaders.append('Content-Type', 'application/json');
+
+      fetch('http://localhost:3000/trainer',
+        {
+          method: 'DELETE',
+          headers: myheaders,
+          body: JSON.stringify({
+            id: x
+          })
+        }).then(Response =>
+          Response.json())
+        .then(data => {
+          // console.log(data);
+
+        })
+
+    })
+  }
+};
+
+
+
+let id_profile = document.getElementsByClassName("im");
+
+function openProfile(){
+
+  for (let i = 0; i < id_profile.length; i++) {
+    id_profile[i].addEventListener("click", e => {
+
+      let x = e.target.id ;
+      console.log(x);
+
+    })
+  }
+};
+
+    
+
+
+    
 
 
 
 
-
-
-// document.getElementsByClassName("list").addEventListener('click', trainerProfile);
 // function trainerProfile() {
-//   window.location = 'trainerProfile.html';
+
+//   let divs = document.getElementsByClassName("list")
+// for (let i = 0; i < divs.length; i++) {
+//   divs[i].addEventListener("click", e => {
+//     if (e.target.tagName = "DIV") {
+//       console.log(e.target.getAttribute("id"))
+
+//     }
+
+//   })
 // }
+
+//   window.location = 'trainerProfile.html';

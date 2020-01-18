@@ -1,4 +1,4 @@
- let save_btn=document.getElementById('save');
+let save_btn=document.getElementById('save');
     save_btn.style.display="none";
     let cancle_btn=document.getElementById('cancle');
     cancle_btn.style.display="none";
