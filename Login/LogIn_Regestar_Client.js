@@ -102,6 +102,7 @@ function RegestarNewAccount() {
     }).then(re => {
       return re.json()
     }).then(data => {
+      console.log(data)
       localStorage.setItem("token",data.token)
       if(data.status == 226) {
         Email_SignUp_P.innerHTML = "your Email is Exists"
@@ -109,6 +110,7 @@ function RegestarNewAccount() {
       }else{
         Email_SignUp_P.innerHTML = ""
         Email_SignUp.style.borderBottomColor = "green" 
+        window.location.replace("../NGO/ProfileNGO.html")
       }
       })
   Name_SignUp.value = "";
@@ -132,12 +134,9 @@ function RegestarNewAccount() {
           Pass_LogIn.style.borderBottomColor = 'green';
           Email_LogIn.style.borderBottomColor = 'green';
           Pass_LogIn.value = "";
-          Email_LogIn.value = "";
-          
-          showName();
-  
-          MoveToHomePage();
-           
+          Email_LogIn.value = "";      
+        
+          window.location.replace("../Course/index.html")
         }else if(data.status == 400) {
           Pass_LogIn_p.innerHTML = "your password dosen't exists";
           Pass_LogIn.style.borderBottomColor = 'red';
@@ -150,11 +149,6 @@ function RegestarNewAccount() {
 
     })
  
-}
-
-
-function  MoveToHomePage() {
-  location.replace("../Course/index.html")
 }
 
   function showName() {
