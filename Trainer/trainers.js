@@ -1,3 +1,12 @@
+
+
+
+
+
+
+
+
+
 let close_item = document.getElementsByClassName("remove");
 enable_close();
 function enable_close() {
@@ -74,7 +83,7 @@ function enable_close() {
         .then(data => {
           // console.log(data);
 
-        })
+        });
 
     })
   }
@@ -89,12 +98,23 @@ function openProfile(){
   for (let i = 0; i < id_profile.length; i++) {
     id_profile[i].addEventListener("click", e => {
 
-      let x = e.target.id ;
-      console.log(x);
+      let id = e.target.id ;
+      console.log(id);
+
+      window.location = "../trainer/trainerProfile.html?id="+id;
 
     })
   }
 };
+
+// function open(target){
+
+
+//   console.log(id)
+
+//   window.location = "../trainer/trainers.html?id="+id;
+
+// }
 
     
 

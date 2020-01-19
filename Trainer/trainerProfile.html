@@ -2,117 +2,23 @@
 <html>
 <head>
 	<title>Trainers</title>
-    <link rel="stylesheet" type="text/css" href="trainerProfile.css"> 
+    <link rel="stylesheet" type="text/css" href="trainerProfile.css">
     <style>
-  
-
     </style>
 </head>
 <body>
 <div>
 	<ul>
-    <li><a href="../Course/">Home</a></li>
-    <li><a href="../Trainee/">Trainer</a></li>
+    <li><a href="../Course/index.html">Home</a></li>
+    <li><a href="../Trainer/trainers.html">Trainer</a></li>
     <li><a href="../NGO/">Profile</a></li>
       <li class="right"><a>log out</a></li>
 </ul>	
 </div>
-
  <div class="container" id="container" >
-    <!-- <div   class="profile"><div class="profileImg"><label> <img src="img/user_icon.jpg" alt="" id="preview"><input type="file" id="filetag" style="visibility: hidden;"></label></div><div  class="infoProfile" id="infoProfile" ><input class="input" type="text" value="Trainer Name" id="name"><br><br><input class="input" type="email" id="email" value="tariner1@gmail.com"><p></p><input class="input" type="tel" id="phone" value="07222223333"><br><br><input class="input" type="text"id="address" value="jordan-irbed"></div></div><div class="Bio"><h2>Trainer Name <img id="EditId" class="EditIcon" src="img/iconfinder_edit.png" onclick="change_value()" ></h2><h3>Bio: </h3><textarea style="border-style: none;" id="BioId" class="input" class="BioId" style="height: 300px;"> </textarea> -->
-
-
-      <div class="btn">
-            <button type="submit" id="save" class="savebtn" >save</button>
-            <button type="submit" id="cancle" class="Canclebtn">Cancle</button>
-    </div>
+    <!-- <div class="profile"  ><div class="profileImg"><label><img src="img/user_icon.jpg" alt="" id="preview" ><input type="file" id="filetag" style="visibility: hidden;"></label></div><div  class="infoProfile" id="infoProfile" ><input class="input" type="text" value="Trainer Name" id="name"><br><br><input class="input" type="email" id="email" value="tariner1@gmail.com"><p></p><input class="input" type="tel" id="phone" value="07222223333"><br><br><input class="input" type="text"id="address" value="jordan-irbed"></div></div><div class="Bio"><h2>Trainer Name <img id="EditId" class="EditIcon" src="img/iconfinder_edit.png" onclick="change_value()" ></h2><h3>Bio: </h3><textarea style="border-style: none;" id="BioId" class="input" class="BioId" style="height: 300px;"></textarea><div class="btn"><button type="submit" id="save" class="savebtn" >save</button><button type="submit" id="cancle" class="Canclebtn">Cancle</button></div> -->
   </div>
-
-  <script >
-  let save_btn=document.getElementById('save');
-    save_btn.style.display="none";
-    let cancle_btn=document.getElementById('cancle');
-    cancle_btn.style.display="none";
-    let inputs=document.getElementsByClassName("input");
-    for(let i=0;i<inputs.length;i++){
-      inputs[i].setAttribute("readonly","");
-      inputs[i].style.backgroundColor="transparent";
-      };
-      // document.getElementById("EditId").addEventListener("click",change_value);
-      document.getElementById("save").addEventListener("click",save);
-
-    function change_value(){
-      save_btn.style.display="block";
-      cancle_btn.style.display="block";
-      for(let i=0;i<inputs.length;i++){
-          
-          inputs[i].removeAttribute("readonly");
-          inputs[i].style.backgroundColor="white";
-
-  var fileTag = document.getElementById("filetag");
-preview = document.getElementById("preview"); 
-fileTag.addEventListener("change", function() {
-changeImage(this);
-});
-function changeImage(input) {
-var reader;
-if (input.files && input.files[0]) {
- reader = new FileReader();
- reader.onload = function(e) {
-   preview.setAttribute('src', e.target.result);
- }
- reader.readAsDataURL(input.files[0]);
-
-}}
-}
-    };
-    function save(){
-       for(let i=0;i<inputs.length;i++){
-      inputs[i].setAttribute("readonly","");
-      inputs[i].style.backgroundColor="transparent";
-      }
-      save_btn.style.display="none";
-      cancle_btn.style.display="none";
-    }
-    function cancle(){
-        let inputs=document.getElementsByClassName("input");
-    for(let i=0;i<inputs.length;i++){
-      inputs[i].setAttribute("readonly","");
-      inputs[i].style.backgroundColor="transparent";
-      };
-      save_btn.style.display="none";
-      cancle_btn.style.display="none";
-    }
-
-    ///////////////////////////////////////////////////
-
-    show();
-    function show(){
-      fetch('http://localhost:3000/trainer/'+20, {
-             method: 'GET',
-         })
-         .then(response => response.json())
-         .then(data => {
-           console.log(data);
-           function renderTrainees(data) {
-        const htmlArray = data.map(
-          trainer => '<div   class="profile"><div class="profileImg"><label> <img src="http://localhost:3000'+trainer.picture+ '" alt="" id="preview"><input type="file" id="filetag" style="visibility: hidden;"></label></div><div  class="infoProfile" id="infoProfile" ><input class="input" type="text" value="'+trainer.name +'" id="name"><br><br><input class="input" type="email" id="email" value="'+trainer.email+ '"><p></p><input class="input" type="tel" id="phone" value="'+trainer.mobile +'"><br><br><input class="input" type="text"id="address" value="'+trainer.address +'" value="jordan-irbed"></div></div><div class="Bio"><h2>'+ trainer.name +'<img id="EditId" class="EditIcon" src="img/iconfinder_edit.png" onclick="change_value()" ></h2><h3>Bio: </h3><textarea style="border-style: none;" id="BioId" class="input" class="BioId" style="height: 300px;">'+trainer.short_bio+'</textarea>'
-        );
-
-        document.getElementById("container").innerHTML += htmlArray.join('');
-
-
-      }
-      renderTrainees(data);
-
-          });
-    
-     }
-
-
-    
-   
-      
-  </script>
+<script type="text/javascript" src="trainerProfile.js"></script>
+  
 </body>
 </html>
