@@ -10,6 +10,25 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
+function renderTrainees(data) {
+  const htmlArray = data.map(
+    trainer => ' <div class="profile"  ><div class="profileImg"><label><img src="http://localhost:3000'+trainer.picture+'" alt="" id="preview" ><input type="file" id="filetag" style="visibility: hidden;"></label></div><div  class="infoProfile" id="infoProfile" ><input class="input" type="text" value="'+ trainer.name+'" id="name"><br><br><input class="input" type="email" id="email" value="'+ trainer.email +'"><p></p><input class="input" type="tel" id="phone" value="'+ trainer.mobile + '"><br><br><input class="input" type="text"id="address" value="'+ trainer.address +'"></div></div><div class="Bio"><h2>'+ trainer.name+'<img id="EditId" class="EditIcon" src="img/iconfinder_edit.png" onclick="change_value()" ></h2><h3>Bio: </h3><textarea style="border-style: none;" id="BioId" class="input" class="BioId" style="height: 300px;">'+ trainer.short_bio + '</textarea><div class="btn"><div class="lefttt" ><button type="submit" id="save" class="savebtn" >save</button></div><div class="righttt" ><button type="submit" id="cancle" class="Canclebtn">Cancle</button></div></div>'
+  );
+
+  document.getElementById("container").innerHTML += htmlArray.join('');
+  let save_btn=document.getElementById('save');
+  save_btn.addEventListener("click",save);
+    save_btn.style.display="none";
+    let cancle_btn=document.getElementById('cancle');
+    cancle_btn.style.display="none";
+    let inputs=document.getElementsByClassName("input");
+    for(let i=0;i<inputs.length;i++){
+      inputs[i].setAttribute("readonly","");
+      inputs[i].style.backgroundColor="transparent";
+      };
+      document.getElementById("EditId").addEventListener("click",change_value);
+}
+
 show();
 
 
@@ -20,38 +39,19 @@ show();
          })
          .then(response => response.json())
          .then(data => {
-           console.log(data);
-           function renderTrainees(data) {
-        const htmlArray = data.map(
-          trainer => ' <div class="profile"  ><div class="profileImg"><label><img src="http://localhost:3000'+trainer.picture+'" alt="" id="preview" ><input type="file" id="filetag" style="visibility: hidden;"></label></div><div  class="infoProfile" id="infoProfile" ><input class="input" type="text" value="'+ trainer.name+'" id="name"><br><br><input class="input" type="email" id="email" value="'+ trainer.email +'"><p></p><input class="input" type="tel" id="phone" value="'+ trainer.mobile + '"><br><br><input class="input" type="text"id="address" value="'+ trainer.address +'"></div></div><div class="Bio"><h2>'+ trainer.name+'<img id="EditId" class="EditIcon" src="img/iconfinder_edit.png" onclick="change_value()" ></h2><h3>Bio: </h3><textarea style="border-style: none;" id="BioId" class="input" class="BioId" style="height: 300px;">'+ trainer.short_bio + '</textarea><div class="btn"><button type="submit" id="save" class="savebtn" >save</button><button type="submit" id="cancle" class="Canclebtn">Cancle</button></div>'
-        );
-
-        document.getElementById("container").innerHTML += htmlArray.join('');
-
-
-      }
-      renderTrainees(data);
-
+            renderTrainees(data);
           });
     
      }
-
-
-
-let save_btn=document.getElementById('save');
-    save_btn.style.display="none";
-    let cancle_btn=document.getElementById('cancle');
-    cancle_btn.style.display="none";
-    let inputs=document.getElementsByClassName("input");
-    for(let i=0;i<inputs.length;i++){
-      inputs[i].setAttribute("readonly","");
-      inputs[i].style.backgroundColor="transparent";
-      };
-      document.getElementById("EditId").addEventListener("click",change_value);
-      document.getElementById("save").addEventListener("click",save);
+      
     function change_value(){
+      let save_btn=document.getElementById('save');
       save_btn.style.display="block";
+
+      let cancle_btn=document.getElementById('cancle');
       cancle_btn.style.display="block";
+      let inputs=document.getElementsByClassName("input");
+
       for(let i=0;i<inputs.length;i++){
           inputs[i].removeAttribute("readonly");
           inputs[i].style.backgroundColor="white";
@@ -72,19 +72,27 @@ if (input.files && input.files[0]) {
 }
     };
     function save(){
+      let inputs=document.getElementsByClassName("input");
        for(let i=0;i<inputs.length;i++){
       inputs[i].setAttribute("readonly","");
       inputs[i].style.backgroundColor="transparent";
       }
+      let save_btn=document.getElementById('save');
       save_btn.style.display="none";
+      let cancle_btn=document.getElementById('cancle');
       cancle_btn.style.display="none";
     }
     function cancle(){
         let inputs=document.getElementsByClassName("input");
+        let save_btn=document.getElementById('save');
+        let cancle_btn=document.getElementById('cancle');
+
+
     for(let i=0;i<inputs.length;i++){
       inputs[i].setAttribute("readonly","");
       inputs[i].style.backgroundColor="transparent";
       };
+
       save_btn.style.display="none";
       cancle_btn.style.display="none";
     }

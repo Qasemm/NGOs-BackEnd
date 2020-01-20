@@ -5,7 +5,7 @@
 
 
 
-
+ 
 
 let close_item = document.getElementsByClassName("remove");
 enable_close();
