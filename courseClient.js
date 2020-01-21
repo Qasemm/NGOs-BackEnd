@@ -5,7 +5,22 @@ const date_end=document.getElementById('date_end');
 const locations=document.getElementById('location');
 const range_weight=document.getElementById('range_weight');
 const desc=document.getElementById('desc');
-const trinername =document.getElementById('trinername');
+ const trinername =document.getElementById('trinername');
+// function GettrainerName(){
+//     fetch('http://localhost:3000/trainer', {
+//         method: 'GET',
+//       })
+//         .then(Response =>
+//           Response.json())
+//         .then(data => {
+//           console.log(data);
+//             const htmlArray = data.map(trainer => '<select class="input" ><option  value="'+ trainer.name +'">Volvo</option> </select>');
+    
+//             document.getElementById("option_of_trainer").innerHTML += htmlArray.join('');
+//         });
+//     }
+
+
 document.getElementById("save").addEventListener("click" , addCoures);
 function addCoures() {
     const setOfNumder = /[0-9]/;
@@ -38,3 +53,4 @@ body:JSON.stringify({
         console.log('error');
     }
 }
+    // trinername:trinername.value

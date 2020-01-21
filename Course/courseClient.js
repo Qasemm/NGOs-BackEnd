@@ -1,10 +1,10 @@
-// let cancle_btn=document.getElementById('cancle');
+let cancle_btn=document.getElementById('cancle');
 // let save_btn=document.getElementById('save');
 // save_btn.addEventListener('click',goBack);
-// cancle_btn.addEventListener('click',goBack);
-//  function goBack() {
-// window.location = "../Course/index.html"; //specify the url to redirect
-// }
+cancle_btn.addEventListener('click',goBack);
+ function goBack() {
+window.location = "../Course/index.html"; //specify the url to redirect
+}
 let input=document.getElementsByTagName("input");         
 let Name_course_P=document.getElementById("Name_course_P");
 let Date_course_P=document.getElementById("Date_course_P");
@@ -20,7 +20,7 @@ const checkName = /^[a-z]|[0-9]/i;
 function checkNameRegExp() {
 if (CourseName.value == "") {
 Name_course_P.innerHTML = "the Filed is empty";
-nameInput.style.borderBottomColor = "red";
+CourseName.style.borderBottomColor = "red";
 }
 else if (checkName.test(CourseName.value) == false) {
 Name_course_P.innerHTML="Name is Falied";
@@ -96,23 +96,59 @@ CourseLocation.style.borderBottomColor="green";
 location_course_P.innerHTML="";
 }
 }
+getTrainer();
+function getTrainer(){
+    fetch('http://localhost:3000/trainer', {
+        method: 'GET',
+      })
+        .then(Response =>
+          Response.json())
+        .then(data => {
+          const htmlArray = data.map( (trainer , index) =>'<option id ="optionTraine"  value="'+trainer.name+'"> '+ trainer.name+ '</option>');
+            document.getElementById("addtriner").innerHTML += htmlArray;
+            option=document.getElementsByTagName('option');
+            // console.log(option[1].id);
+            // document.getElementById("addtriner").addEventListener('change',getid(id));
+            // onchange="getid(this.id)"
+            // for(let i=0;i<option.length;i++){
+            //     document.getElementById("addtriner").addEventListener('change', e=>{
+            // //         let trg = e.target,
+            // //         trg_par = option[i].parentElemen            //         console.log(e.target[i].id);
+            // console.log(option[i].id == e.target[i].id);
+                // let name= document.getElementsByTagName('option')[i].textContent;
+                // console.log(name);
+                // console.log(document.getElementsByTagName('option')[i].value);
+                
+              })   }
+let add =document.getElementById("addtriner");
+  
+
+add.addEventListener('change', op)
+function op(e){
+    let mm = e.target.value;
+    console.log(mm);
+// return mm;
+}
+
+
+
 document.getElementById("save").addEventListener("click" , addCoures);
 function addCoures() {
-// const contentNameCourse=document.getElementById('contentNameCourse');
-// const date_begin=document.getElementById('date_begin');
-// const date_end=document.getElementById('date_end');
-// const locations=document.getElementById('location');
-// const range_weight=document.getElementById('range_weight');
 let CourseName=document.getElementById("contentNameCourse");
 let DateBegin=document.getElementById("date_begin");
 let DateEnd=document.getElementById("date_end");
 let CourseLocation=document.getElementById("location");
 let NumberOfSeats=document.getElementById("range_weight"); 
 const desc=document.getElementById('desc');
-const trinername =document.getElementById('trinername');
+let trainerName = document.getElementById("addtriner").value;
+console.log(trainerName);
+
+
 let header=new Headers();
 header.append("content-type", "application/json");
-fetch ('http://localhost:3000/courses',{
+let token = localStorage.getItem('id');
+console.log(token)
+fetch ('http://localhost:3000/courses/'+token,{
 method: 'POST',
 headers:header,
 body:JSON.stringify({
@@ -121,7 +157,8 @@ body:JSON.stringify({
     desctiption:desc.value,
     date_begin:DateBegin.value,
     date_end:DateEnd.value,
-    number_of_seats:NumberOfSeats.value
+    number_of_seats:NumberOfSeats.value,
+    trainerName:trainerName
 })
     }   
     ).then(res=>{
@@ -130,6 +167,8 @@ body:JSON.stringify({
     .then(data=>{
         console.log(data);
         
+        
     });
+    // window.location = "../Course/index.html";
    
 }
