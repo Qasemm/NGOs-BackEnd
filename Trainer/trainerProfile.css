@@ -172,6 +172,9 @@ img{
      outline: none;
     margin-top: -37px;
     margin-right: 200px; 
+    position: absolute;
+    left: 512px;
+
  }
  .link{
      margin-top: 20px;

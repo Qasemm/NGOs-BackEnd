@@ -12,7 +12,7 @@ function getParameterByName(name, url) {
 
 function renderTrainees(data) {
   const htmlArray = data.map(
-    trainer => ' <div class="profile"  ><div class="profileImg"><label><img src="http://localhost:3000'+trainer.picture+'" alt="" id="preview" ><input type="file" id="filetag" style="visibility: hidden;"></label></div><div  class="infoProfile" id="infoProfile" ><input class="input" type="text" value="'+ trainer.name+'" id="name"><br><br><input class="input" type="email" id="email" value="'+ trainer.email +'"><p></p><input class="input" type="tel" id="phone" value="'+ trainer.mobile + '"><br><br><input class="input" type="text"id="address" value="'+ trainer.address +'"></div></div><div class="Bio"><h2>'+ trainer.name+'<img id="EditId" class="EditIcon" src="img/iconfinder_edit.png" onclick="change_value()" ></h2><h3>Bio: </h3><textarea style="border-style: none;" id="BioId" class="input" class="BioId" style="height: 300px;">'+ trainer.short_bio + '</textarea><div class="btn"><div class="lefttt" ><button type="submit" id="save" class="savebtn" >save</button></div><div class="righttt" ><button type="submit" id="cancle" class="Canclebtn">Cancle</button></div></div>'
+    trainer => ' <div class="profile"  ><div class="profileImg"><label><img src="http://localhost:3000'+trainer.picture+'" alt="" id="preview" ><input type="file" id="filetag" style="visibility: hidden;"></label></div><div  class="infoProfile" id="infoProfile" ><input class="input" type="text" value="'+ trainer.name+'" id="name"><br><br><input class="input" type="email" id="email" value="'+ trainer.email +'"><p></p><input class="input" type="tel" id="phone" value="'+ trainer.mobile + '"><br><br><input class="input" type="text"id="address" value="'+ trainer.address +'"></div></div><div class="Bio"><h2>'+ trainer.name+'<img id="EditId" class="EditIcon" src="img/iconfinder_edit.png" onclick="change_value()" ></h2><h3>Bio: </h3><textarea style="border-style: none;" id="BioId" class="input" class="BioId" style="height: 300px;">'+ trainer.short_bio + '</textarea><div class="btn"><button type="submit" id="save"  onclick="edit()"  class="savebtn" >save</button><button type="submit" id="cancle" class="Canclebtn" onclick="cancle()" >Cancle</button></div>'
   );
 
   document.getElementById("container").innerHTML += htmlArray.join('');
@@ -30,6 +30,7 @@ function renderTrainees(data) {
 }
 
 show();
+let b64 = "";
 
 
     function show(){
@@ -70,6 +71,27 @@ if (input.files && input.files[0]) {
  reader.readAsDataURL(input.files[0]);
 }}
 }
+
+input   = document.getElementById("filetag");
+// let b64 = "";
+
+input.onchange = function () {
+
+  var file = input.files[0],
+
+    img = new FileReader();
+
+
+  img.onloadend = function () {
+    b64 = img.result.replace(/^data:.+;base64,/, '');
+
+
+  };
+
+  img.readAsDataURL(file);
+};
+
+
     };
     function save(){
       let inputs=document.getElementsByClassName("input");
@@ -96,28 +118,66 @@ if (input.files && input.files[0]) {
       save_btn.style.display="none";
       cancle_btn.style.display="none";
     }
+    ////////////////
 
-    ///////////////////
-
-    // show();
-    // function show(){
-    //   fetch('http://localhost:3000/trainer/'+20, {
-    //          method: 'GET',
-    //      })
-    //      .then(response => response.json())
-    //      .then(data => {
-    //        console.log(data);
-    //        function renderTrainees(data) {
-    //     const htmlArray = data.map(
-    //       trainer => ' <div class="profile"  ><div class="profileImg"><label><img src="img/user_icon.jpg" alt="" id="preview" ><input type="file" id="filetag" style="visibility: hidden;"></label></div><div  class="infoProfile" id="infoProfile" ><input class="input" type="text" value="'+ trainer.name+'" id="name"><br><br><input class="input" type="email" id="email" value="'+ trainer.email +'"><p></p><input class="input" type="tel" id="phone" value="'+ trainer.mobile + '"><br><br><input class="input" type="text"id="address" value="'+ trainer.address +'"></div></div><div class="Bio"><h2>'+ trainer.name+'<img id="EditId" class="EditIcon" src="img/iconfinder_edit.png" onclick="change_value()" ></h2><h3>Bio: </h3><textarea style="border-style: none;" id="BioId" class="input" class="BioId" style="height: 300px;">'+ trainer.short_bio + '</textarea><div class="btn"><button type="submit" id="save" class="savebtn" >save</button><button type="submit" id="cancle" class="Canclebtn">Cancle</button></div>'
-    //     );
-
-    //     document.getElementById("container").innerHTML += htmlArray.join('');
+//     var fileTag = document.getElementById("filetag");
+// preview = document.getElementById("preview"); 
+// fileTag.addEventListener("change", function() {
+//  changeImage(this);
+// });
+// function changeImage(input) {
+//  var reader;
+//  if (input.files && input.files[0]) {
+//    reader = new FileReader();
+//    reader.onload = function(e) {
+//      preview.setAttribute('src', e.target.result);
+//    }
+//    reader.readAsDataURL(input.files[0]);
+//  }}
 
 
-    //   }
-    //   renderTrainees(data);
 
-    //       });
-    
-    //  }
+   
+
+////////////////
+ 
+    function edit(){
+      name    = document.getElementById("name").value;
+      email   = document.getElementById("email").value;
+      num     = document.getElementById("phone").value;
+      address = document.getElementById("address").value;
+      // photo   = document.getElementById("filetag").value
+      bio     = document.getElementById("BioId").value;
+      console.log(b64)
+      let Id =  getParameterByName("id", url);
+
+      console.log(Id);
+      
+      if (name === "" ){
+        alert("add some information")
+      }else{
+      
+          const myheader = new Headers();
+      
+          myheader.append('Content-Type', 'application/json');
+      
+          fetch('http://localhost:3000/trainer/' + Id ,{
+              method :'put',
+              headers : myheader,
+              body : JSON.stringify({
+                name : name,
+                email : email,
+                num : num ,
+                address : address,
+                photo : b64,
+                bio : bio
+              })
+      
+      })
+              .then(response=>response)
+              .then((data) => {
+              console.log(data);
+              })
+      
+      
+      }}
