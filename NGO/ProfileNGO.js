@@ -81,8 +81,4 @@ function EditNgo() {
   }).then(data => {
     console.log(data)
   })
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 1213637599de70fda60f33cba336ba69b88d9846
