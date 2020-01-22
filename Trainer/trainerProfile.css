@@ -170,15 +170,23 @@ img{
      width:155px;
      border-radius: 10px;
      outline: none;
-     float: right;
     margin-top: -37px;
     margin-right: 200px; 
+    position: absolute;
+    left: 512px;
+
  }
  .link{
      margin-top: 20px;
  }
  .btn{
-    margin-top: 90px;
+    margin-top: 40px;
+}
+.righttt{
+  float: right;
+}
+.lefttt{
+  float: left;
 }
  .textBio{
      width:400px;
