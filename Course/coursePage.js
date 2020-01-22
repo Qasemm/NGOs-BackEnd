@@ -27,7 +27,7 @@ function renderOneCourses(data) {
 
     const htmlArray = data.map(( courses,index) =>
     ' <div> <h3 >title :</h3> <input id="title" type="text" class="para input" value="'+courses.title+
-    '"></input></div> <div>  <h3 >Trainer Of Course:</h3>  <a href="#" class="para aLink" onclick="getPorfileTrainer()">'+courses.trainer+
+    '"></input></div> <div>  <h3 >Trainer Of Course:</h3>  <a id="'+courses.trainer+'" class="para aLink"  onclick="openProfile(this.id)">'+courses.name+
     '</a> </div>  <div> <h3>descrption : </h3> <input  id="description"type="text" class="para input" value="'+courses.description+
     '"></input></div>  <div><h3>dates :</h3> <input id="dates1" type="text" class="para input" value="'+ courses.start_date+'"></input> </div> <div><h3>dates :</h3>   <input id="dates2" type="text" class="para input" value="'+ courses.end_datel+
     '"></input></div> <div> <h3> location :</h3><input id="location" type="text"class="para input" value="'+courses.location+
@@ -72,7 +72,7 @@ function renderOneCourses(data) {
      
       function renderTrainees(data) {
         const htmlArray = data.map(
-          trainer => '<div class="list"><div  class="im"><img onclick="openProfile()" id = ' + trainer.id + ' src="" alt=""></div><div  class="im contnt desc"><h3 >' + trainer.name + ' <img class="remove" id = ' + trainer.id + '  src="img/error.png"></h3><p>' + trainer.email + '</p><p >' + trainer.mobile + '</p><p>' + trainer.address + '</p></div></div></a></div>'
+          trainer => '<div class="list"><div  class="im"><img onclick="" id = ' + trainer.id + ' src="" alt=""></div><div  class="im contnt desc"><h3 >' + trainer.name + ' <img class="remove" id = ' + trainer.id + '  src="img/error.png"></h3><p>' + trainer.email + '</p><p >' + trainer.mobile + '</p><p>' + trainer.address + '</p></div></div></a></div>'
         );
 
         document.getElementById("div1").innerHTML += htmlArray.join('');
@@ -83,9 +83,18 @@ function renderOneCourses(data) {
     
   }
   //////////////////////////////////////////////////////////////
-function getPorfileTrainer(){
+
+
+  function openProfile(id){
+    // alert("hi");
+    // console.log();
+  // let id=document.getElementById("trainer").value;
+   console.log(id);
+  window.location = "../Trainer/trainerProfile.html?id="+id;
   
-}
+      
+    
+  };
   //////////////////////////////////////////////////////////////
 
 function change_value() {

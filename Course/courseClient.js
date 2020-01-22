@@ -104,7 +104,7 @@ function getTrainer(){
         .then(Response =>
           Response.json())
         .then(data => {
-          const htmlArray = data.map( (trainer , index) =>'<option id ="optionTraine"  value="'+trainer.name+'"> '+ trainer.name+ '</option>');
+          const htmlArray = data.map( (trainer , index) =>'<option id ="optionTraine"  value="'+trainer.id+'"> '+ trainer.name+ '</option>');
             document.getElementById("addtriner").innerHTML += htmlArray;
             option=document.getElementsByTagName('option');
             // console.log(option[1].id);

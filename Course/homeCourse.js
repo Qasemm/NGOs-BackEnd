@@ -1,13 +1,13 @@
 // import {upatedPage} from './api/course.js' ;
 
 upatedPage();
-
+// let x  = "";
 ////////////////////////////////////////////////////////////////////
  function rendercourses(data) {
-
+console.log(data);
   const htmlArray = data.map(( courses,index) =>
      '<div data-id='+courses.id+' class="list"><h3>'+courses.title+'<img id="remove" class="remove" src="img/error.png" onclick="deleteCourse"></h3>' +
-    '<p>'+courses.description+ '</p> <a href="" ><h4 style="margin-left: 17px;color: blue;">'+courses.trainer+'</h4></a><button class="MoreInfo" onclick="showOneCourse(trg)" >  More Information </button></div>'
+    '<p>'+courses.description+ '</p> <a href="" ><h4 style="margin-left: 17px;color: blue;">'+courses.name+'</h4></a><button class="MoreInfo" onclick="showOneCourse(trg)" >  More Information </button></div>'
    );
    document.getElementById("AllCourses").innerHTML += htmlArray.join('');
    let re=document.getElementsByClassName("remove")
@@ -29,6 +29,24 @@ upatedPage();
 
 }
 /////////////////////////////////////////////////////
+
+// function getTrainerName(){
+  // fetch('http://localhost:3000/courses/trainres/18',
+  // {
+  //     method:'GET'
+
+  // }) 
+  // .then(Response =>
+  //       Response.json())
+  //       .then( data =>{ 
+  //           console.log(data);
+  //           // rendercourses(data);
+  //           console.log(data[0].name); 
+  //           x = data[0].name;
+  //   });
+  // }
+
+////////////////////////////////////////////////////
 
 function upatedPage() {
   let token = localStorage.getItem('id');
