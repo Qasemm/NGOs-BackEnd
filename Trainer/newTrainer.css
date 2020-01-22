@@ -6,7 +6,7 @@
     margin-top: 20px;
     margin-left: 10%;
     margin-right: 10%;
-    background-color:lightgrey;
+   /* background-color:lightgrey;*/
     padding: 2%;
 }
 .btn{
@@ -261,6 +261,7 @@ input{
      width:155px;
      border-radius: 10px;
      outline: none;
+     background-color: darkgray;
  }
  .btn{
     margin-top: 90px;

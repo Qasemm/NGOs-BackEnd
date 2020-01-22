@@ -26,8 +26,13 @@ getInfOneCourse();
 function renderOneCourses(data) {
 
     const htmlArray = data.map(( courses,index) =>
+<<<<<<< HEAD
     ' <div> <h3 >title :</h3> <input id="title" type="text" class="para input" value="'+courses.title+
     '"></input></div> <div>  <h3 >Trainer Of Course:</h3>  <a id="'+courses.trainer+'" class="para aLink"  onclick="openProfile(this.id)">'+courses.name+
+=======
+    ' <div> <h3 >title :</h3> <input id="title" type="text" class="para " value="'+courses.title+
+    '"></input></div> <div>  <h3 >Trainer Of Course:</h3>  <a href="#" class="para aLink" onclick="getPorfileTrainer()">'+courses.trainer+
+>>>>>>> 1ab1f338830a8aca5333997476bcf0ec2cc25c1a
     '</a> </div>  <div> <h3>descrption : </h3> <input  id="description"type="text" class="para input" value="'+courses.description+
     '"></input></div>  <div><h3>dates :</h3> <input id="dates1" type="text" class="para input" value="'+ courses.start_date+'"></input> </div> <div><h3>dates :</h3>   <input id="dates2" type="text" class="para input" value="'+ courses.end_datel+
     '"></input></div> <div> <h3> location :</h3><input id="location" type="text"class="para input" value="'+courses.location+
