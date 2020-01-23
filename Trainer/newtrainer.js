@@ -1,11 +1,4 @@
 //Validate Functions
-document.getElementById('save').addEventListener('click',myevreything);
-
-function myevreything(){
-
-  add();
-}
-
 
 let Trainer_name_P=document.getElementById("Trainer_name_P");
 let name=document.getElementById("name");
@@ -19,7 +12,9 @@ let Adress_P=document.getElementById("Adress_P");
 // let save_btn=document.getElementById('save');
 // save_btn.addEventListener('click',goBack);
 // cancle_btn.addEventListener('click',goBack);
- 
+//  function goBack() {
+// window.location = "trainers.html"; //specify the url to redirect
+// }
 const checkName = /^[a-z]|[0-9]/i;
 function checkNameRegExp() {
 if (name.value == "") {
@@ -97,6 +92,7 @@ function changeImage(input) {
    }
    reader.readAsDataURL(input.files[0]);
  }}
+ document.getElementById('save').addEventListener('click',add);
 
 /////////
 
@@ -129,8 +125,6 @@ address = document.getElementById("address").value;
 // photo   = document.getElementById("filetag").value
 bio     = document.getElementById("bio").value;
 console.log(b64)
-
-
 if (name === "" ){
   alert("add some information")
 }else{
@@ -159,6 +153,3 @@ if (name === "" ){
 
 
 }}
-
-
-
