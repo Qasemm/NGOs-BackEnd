@@ -164,6 +164,8 @@ img{
      border-radius: 10px;
      outline: none;
      font-size: 16px;
+    margin-left: -75px;
+
  }
  .Canclebtn{
      font-size: 16px;
@@ -172,10 +174,7 @@ img{
      border-radius: 10px;
      outline: none;
      float: right;
-    margin-top: -37px;
-    margin-right: 100px; 
-    background-color: darkgray;
-
+     margin-top: -37px;
  }
  .link{
      margin-top: 20px;
@@ -266,7 +265,7 @@ input{
      margin-left: 4%;
      height: 300px;
  }
- /*.savebtn{
+ .savebtn{
     background-color:#0793C8;
     height: 38px;
     width:155px;
@@ -281,9 +280,9 @@ input{
     border-radius: 10px;
     outline: none;
     float: right;
-  /* margin-top: -37px;*/
-   /*margin-right: 60px;
-}*/
+   margin-top: -37px;
+   margin-right: 60px;
+}
  body{
      background-color: #f0f2f2 ;
  }

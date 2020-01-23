@@ -4,13 +4,13 @@
 	<title>NGo Profile</title>
 		 	<link rel="stylesheet" type="text/css" href="ProfileNGO.css"> 
 </head>
-<body>
+<body onload="onload()">
 <div>
 	<ul>
     <li><a class="bar" href="../Course/index.html">Home</a></li>
     <li><a class="bar" href="../Trainer/trainers.html">Trainer</a></li>
     <li><a class="bar" href="ProfileNGO.html">Profile</a></li>
-      <li class="right"><a>log out</a></li>
+      <li class="right"><a onclick="logout()">log out</a></li>
 </ul>	
 </div>
 
@@ -24,14 +24,15 @@
     </div>
 ​
     <div  class="infoProfile" id="infoProfile" >
-        <div>
-            <input type="text" class="input" value="NGO Name" id="name"></input>
-</div>
+      <div>
+        <input type="text" class="input" value="names" id="name_input"></input>
+    </div>
+    
 <div>
     <input type="text" class="input" value="www.ngo.com" id="url"></input>
 </div>
 <div>
-    <input type="email" class="input" value="ngo@gmail.com" readonly id="email"></input>
+    <input type="email" class="input" value="ngo@gmail.com" id="email" readonly ></input>
 </div>
 <div class="txt">
 <a title="Change Password" class="linkPassword" href="ChangePassword.html">Change Password </a>
@@ -39,7 +40,7 @@
     </div>
   </div>
   <div class="Bio">
-    <h2>NGO Name <img id="EditId" class="EditIcon" src="img/iconfinder_edit.png" onclick="change_value()"></h2>
+    <span id="ngoName">NGO Name </span><span><img id="EditId" class="EditIcon" src="img/iconfinder_edit.png" onclick="change_value()"></span>
     <h3>Bio: </h3>
     <textarea class="input" id="BioId">aaaaaaaaaaaaaaaaaaaa</textarea>
     <div class="btn">
