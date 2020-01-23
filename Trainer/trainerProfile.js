@@ -12,7 +12,13 @@ function getParameterByName(name, url) {
 
 function renderTrainees(data) {
   const htmlArray = data.map(
-    trainer => ' <div class="profile"  ><div class="profileImg"><label><img src="http://localhost:3000'+trainer.picture+'" alt="" id="preview" ><input type="file" id="filetag" style="visibility: hidden;"></label></div><div  class="infoProfile" id="infoProfile" ><input class="input" type="text" value="'+ trainer.name+'" id="name"><br><br><input class="input" type="email" id="email" value="'+ trainer.email +'"><p></p><input class="input" type="tel" id="phone" value="'+ trainer.mobile + '"><br><br><input class="input" type="text"id="address" value="'+ trainer.address +'"></div></div><div class="Bio"><h2>'+ trainer.name+'<img id="EditId" class="EditIcon" src="img/iconfinder_edit.png" onclick="change_value()" ></h2><h3>Bio: </h3><textarea style="border-style: none;" id="BioId" class="input" class="BioId" style="height: 300px;">'+ trainer.short_bio + '</textarea><div class="btn"><button type="submit" id="save"  onclick="edit()"  class="savebtn" >save</button><button type="submit" id="cancle" class="Canclebtn" onclick="cancle()" >Cancle</button></div>'
+    trainer => {
+      const photoUrl = trainer.picture === ''
+        ? '/imeges/trainers/user_icon.jpg'
+        : trainer.picture;
+
+      return ' <div class="profile"  ><div class="profileImg"><label><img src="http://localhost:3000'+photoUrl+'" alt="" id="preview" ><input type="file" id="filetag" style="visibility: hidden;"></label></div><div  class="infoProfile" id="infoProfile" ><input class="input" type="text" value="'+ trainer.name+'" id="name"><br><br><input class="input" type="email" id="email" value="'+ trainer.email +'"><p></p><input class="input" type="tel" id="phone" value="'+ trainer.mobile + '"><br><br><input class="input" type="text"id="address" value="'+ trainer.address +'"></div></div><div class="Bio"><h2>'+ trainer.name+'<img id="EditId" class="EditIcon" src="img/iconfinder_edit.png" onclick="change_value()" ></h2><h3>Bio: </h3><textarea style="border-style: none;" id="BioId" class="input" class="BioId" style="height: 300px;">'+ trainer.short_bio + '</textarea><div class="btn"><button type="submit" id="save"  onclick="edit()"  class="savebtn" >save</button><button type="submit" id="cancle" class="Canclebtn" onclick="cancle()" >Cancle</button></div>';
+    }
   );
 
   document.getElementById("container").innerHTML += htmlArray.join('');
@@ -84,9 +90,9 @@ input.onchange = function () {
 
   img.onloadend = function () {
     b64 = img.result.replace(/^data:.+;base64,/, '');
+    
 
-
-  };
+  };  
 
   img.readAsDataURL(file);
 };
@@ -118,28 +124,7 @@ input.onchange = function () {
       save_btn.style.display="none";
       cancle_btn.style.display="none";
     }
-    ////////////////
-
-//     var fileTag = document.getElementById("filetag");
-// preview = document.getElementById("preview"); 
-// fileTag.addEventListener("change", function() {
-//  changeImage(this);
-// });
-// function changeImage(input) {
-//  var reader;
-//  if (input.files && input.files[0]) {
-//    reader = new FileReader();
-//    reader.onload = function(e) {
-//      preview.setAttribute('src', e.target.result);
-//    }
-//    reader.readAsDataURL(input.files[0]);
-//  }}
-
-
-
-   
-
-////////////////
+    
  
     function edit(){
       name    = document.getElementById("name").value;
@@ -148,7 +133,7 @@ input.onchange = function () {
       address = document.getElementById("address").value;
       // photo   = document.getElementById("filetag").value
       bio     = document.getElementById("BioId").value;
-      console.log(b64)
+      console.log(num)
       let Id =  getParameterByName("id", url);
 
       console.log(Id);
@@ -160,18 +145,22 @@ input.onchange = function () {
           const myheader = new Headers();
       
           myheader.append('Content-Type', 'application/json');
+          const body = {
+            name : name,
+            email : email,
+            num : num ,
+            address : address,
+            bio : bio
+          }
+
+          if (b64 !== '') {
+            body.photo = b64;
+          }
       
           fetch('http://localhost:3000/trainer/' + Id ,{
               method :'put',
               headers : myheader,
-              body : JSON.stringify({
-                name : name,
-                email : email,
-                num : num ,
-                address : address,
-                photo : b64,
-                bio : bio
-              })
+              body : JSON.stringify(body)
       
       })
               .then(response=>response)
