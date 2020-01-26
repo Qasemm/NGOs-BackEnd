@@ -1,14 +1,10 @@
 // import {upatedPage} from './api/course.js' ;
-
- function LogOut() {
-  localStorage.removeItem('token');
-  window.location = "../Login/LogIn.html"
-}
-
-
-
-
 upatedPage();
+
+
+
+
+
 // let x  = "";
 ////////////////////////////////////////////////////////////////////
  function rendercourses(data) {
@@ -113,5 +109,9 @@ function showOneCourse(trg){
 
 
 }
-    
+function LogOut() {
+  localStorage.removeItem('token');
+  window.location = "../Login/LogIn.html"
+}
+
      
