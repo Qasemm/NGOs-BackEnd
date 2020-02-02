@@ -1,4 +1,5 @@
 // import {upatedPage} from './api/course.js' ;
+<<<<<<< HEAD
 if(localStorage.getItem('token')==undefined){
   window.location = '../Login/Login.html'
 }
@@ -8,7 +9,14 @@ function LogOut() {
   window.location = '../Login/Login.html'
 }
 
+=======
+>>>>>>> b0f1a103923c078f51eed526d9891b4f37675cfd
 upatedPage();
+
+
+
+
+
 // let x  = "";
 ////////////////////////////////////////////////////////////////////
  function rendercourses(data) {
@@ -113,5 +121,9 @@ function showOneCourse(trg){
 
 
 }
-    
+function LogOut() {
+  localStorage.removeItem('token');
+  window.location = "../Login/LogIn.html"
+}
+
      

@@ -281,8 +281,12 @@ input{
     outline: none;
     float: right;
    margin-top: -37px;
+<<<<<<< HEAD
    margin-right: 190px;
    background-color: darkgray;
+=======
+   margin-right: 60px;
+>>>>>>> b0f1a103923c078f51eed526d9891b4f37675cfd
 }
  body{
      background-color: #f0f2f2 ;
