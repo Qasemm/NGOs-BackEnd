@@ -13,6 +13,11 @@ ul {
      background-color:black; 
     color: black;
   }
+  .imgadd{
+    width: 55%;
+    margin-left: 57px;
+    margin-top: 14px;
+  }
   li {
     float: left;
   }
@@ -140,6 +145,7 @@ img{
    /* border-radius: 50%;*/
 }
 .im{
+    height: 30%;
     width: 30%;
     float: left;
 }
@@ -164,8 +170,6 @@ img{
      border-radius: 10px;
      outline: none;
      font-size: 16px;
-    margin-left: -75px;
-
  }
  .Canclebtn{
      font-size: 16px;
@@ -174,7 +178,8 @@ img{
      border-radius: 10px;
      outline: none;
      float: right;
-     margin-top: -37px;
+    margin-top: -37px;
+    margin-right: 100px; 
  }
  .link{
      margin-top: 20px;
@@ -212,9 +217,7 @@ img{
      transition: 0.6s;
  }
 input{
-  margin-left: -5px;
-  border-style: none;
-
+  margin-left: 10px;
 }
 .AddIcon{
   width: 50px;
@@ -222,189 +225,10 @@ input{
   float: right;  
     margin-right: 50px;
 }
-.profile{
-    float: left;
-     position: relative;
-     background-color: white;
-     transition: 0.6s;
- }
- *{
-     outline: none;
- }
- .input{
-     margin-top: 20px;
- }
- .linkPassword{
-     margin-top: 20px;
-     color: blue;
- }
- .btn{
-    margin-top: 100px;
-}
- .textBio{
-     width:400px ;
-     height: 200px;
-     border-style: none;
- }
- #BioId{
-    width:400px ;
-    height: 300px;
-    border-style: none;
- }
- .profileImg{
-     width: 200px;
-     cursor: pointer;
- }
- .infoProfile{
-     background-color: #ffffff;
-
- }
- .Bio{
-     width: 40%; 
-     float: left;
-     margin-left: 4%;
-     height: 300px;
- }
- .savebtn{
-    background-color:#0793C8;
-    height: 38px;
-    width:155px;
-    border-radius: 10px;
-    outline: none;
-    font-size: 16px;
-}
-.Canclebtn{
-    font-size: 16px;
-    height: 38px;
-    width:155px;
-    border-radius: 10px;
-    outline: none;
-    float: right;
-   margin-top: -37px;
-   margin-right: 190px;
-   background-color: darkgray;
-}
- body{
-     background-color: #f0f2f2 ;
- }
- ul {
-     list-style-type: none;
-     margin: 0;
-     padding: 0;
-     overflow: hidden;
-     background-color: #333;
-   }
- li {
-     float: left;
-   }
-   
- li a {
-     display: block;
-     color: white;
-     text-align: center;
-     padding: 14px 16px;
-     text-decoration: none;
- }
- li a:hover:not(.active) {
-    background-color: gray;
-  }
- .active {
-     background-color: #4CAF50;
-   }
- .container{
-     width: 80%;
-     margin: auto;
- }
- .form{
-     width: 30% ;
-     height: 30%;
-     background-color: #ffffff;
-     margin: 15 0 0 15;
-     float: left;
-     border-radius: 10%;
-     cursor: pointer;
-     transition: 0.6s;
- }
- .EditIcon{
-     width: 20px;
-     height: 20px;
-     background-color: #f0f2f2 ;
-     cursor: pointer;
- }
- .form:hover{
-     transform: scale(1.05);
- }
- .infoProfile{
-     margin-left: 20px;
- }
- img{
+ /* img{
      width: 100%;
      border:3px none;
      cursor: pointer;
- }
- .im{
-     width: 30%;
-     float: left;
- }
- .contnt{
-     width: 60%;
-     height: 100%;
-     background-color: #ffffff;
-     float: right;
-     font-family: inherit;
-     border-radius: 10%;
- }
- body{
-    background-color: #F0F2F2 ;
-outline: none;
-  }
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-     background-color:black; 
-    color: black;
-  }
-  li {
-    float: left;
-  }
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 16px 16px;
-    text-decoration: none;
-    height:31px;
-    font-family: sans-serif;
-    font-weight:bold;
-
-  }
-  li a:hover:not(.active) {
-   background-color: gray;
-   
-    height: 31px;
-	opacity:0.8;
-	color: white;
-  }
-  a{
-    color:black;
-  }
-  .right{
-  	float: right;
-  }
-  h1{
-  	text-align: center;
-  }
-  h3{
-  	margin-top: 10px;
-  	margin-left: 10px;
-  	padding: 10px;
-
-  }
-  .txt{
-  	margin-top: 20px;
-  }
 
 
 

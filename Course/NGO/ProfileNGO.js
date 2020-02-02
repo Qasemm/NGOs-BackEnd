@@ -33,6 +33,7 @@ function change_value() {
     inputs[i].style.backgroundColor = "white";
 
     var fileTag = document.getElementById("filetag");
+    preview = document.getElementById("preview");
     fileTag.addEventListener("change", function () {
       changeImage(this);
       console.log(this)
@@ -40,16 +41,16 @@ function change_value() {
 
     function changeImage(input) {
       // ProfileImg.style.cursor = "pointer";
-      let preview = document.getElementById("preview");
       if (input.files && input.files[0]) {
-       let img = new FileReader();
+        img = new FileReader();
         img.onload = function (e) {
           b64 = img.result.replace(/^data:.+;base64,/, '');
-          preview.setAttribute('src', e.target.result);
+          console.log(b64)
 
         }
         img.readAsDataURL(input.files[0]);
-       
+
+      console.log(b64)
 
       }
     }
@@ -86,35 +87,19 @@ function onload() {
   }).then(res => res.json()).then(data => {
     let preview = document.getElementById("preview");
     let dataNGO = data[0]
-    console.log(dataNGO)
+    console.log(data)
     ngoName.innerHTML = dataNGO.name
     bio.innerHTML = dataNGO.bio
     email.value = dataNGO.email
     url.value = dataNGO.website
     new_name.value=dataNGO.name
+    console.log(dataNGO.logo)
+    preview.src="http://localhost:3000"+dataNGO.logo;
 
-
-    const photoUrl = dataNGO.logo === ''
-    ? '/imeges/trainers/user_icon.jpg'
-    : dataNGO.logo;
-console.log(photoUrl);
-    
-    preview.src="http://localhost:3000"+photoUrl;
-    console.log(preview.src)
     
     //////////////////////////////////////////////
   })
 }
-function renderTrainees(data) {
-  const htmlArray = data.map(
-    ngo => {
-      const photoUrl = ngo.logo === ''
-        ? '/imeges/trainers/user_icon.jpg'
-        : ngo.logo;
-
-      return ' <div class="profile"  ><div class="profileImg"><label><img src="http://localhost:3000'+photoUrl+'" alt="" id="preview" ><input type="file" id="filetag" style="visibility: hidden;"></label></div><div  class="infoProfile" id="infoProfile" ><input class="input" type="text" value="'+ ngo.name+'" id="name"><br><br><input class="input" type="email" id="email" value="'+ ngo.email +'"><div class="txt"><a title="Change Password" class="linkPassword" href="ChangePassword.html">Change Password </a></div></div></div><div class="Bio"><h2>'+ ngo.name+'<img id="EditId" class="EditIcon" src="img/iconfinder_edit.png" onclick="change_value()" ></h2><h3>Bio: </h3><textarea style="border-style: none;" id="BioId" class="input" class="BioId" style="height: 300px;">'+ ngo.bio + '</textarea><div class="btn"><button type="submit" id="save"  onclick="edit()"  class="savebtn" >save</button><button type="submit" id="cancle" class="Canclebtn" onclick="cancle()" >Cancle</button></div>';
-    }
-  );}
 
 function updata_ngo() {
   let ngoName = document.getElementById("ngoName")
@@ -165,24 +150,4 @@ function updata_ngo() {
 function logout(){
   localStorage.removeItem("token")
     window.location="../Login/Login.html"
-}
-
-
-
-
-
-function renderNGOprofile(data) {
-  const htmlArray = data.map(
-    ngo => {
-      const photoUrl =ngo.logo === ''
-        ? '/img/user_icon.jpg'
-        : ngo.logo;
-
-    }
-  );
-
-  document.getElementById("container").innerHTML += htmlArray.join('');
-
-  enable_close();
-
 }

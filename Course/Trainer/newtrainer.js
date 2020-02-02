@@ -63,7 +63,8 @@ Adress_P.innerHTML="";
 }
  
 function ValidateNumber(){
-const Phone_regex = /^\d{10}$/;;
+//const Phone_regex = /^\d{10}$/;;*
+const Phone_regex =/^(078|077|079)[0-9]{7}$/;
 if (Contact_number.value == "" ) {
     Contact_number_P.innerHTML = "the Filed is empty";
     Contact_number.style.borderBottomColor = "red";
@@ -124,7 +125,8 @@ num     = document.getElementById("num").value;
 address = document.getElementById("address").value;
 // photo   = document.getElementById("filetag").value
 bio     = document.getElementById("bio").value;
-console.log(b64)
+console.log(b64);
+// window.location="trainers.html"
 if (name === "" ){
   alert("add some information")
 }else{
