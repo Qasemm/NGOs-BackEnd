@@ -1,22 +1,17 @@
 // import {upatedPage} from './api/course.js' ;
-<<<<<<< HEAD
-if(localStorage.getItem('token')==undefined){
-  window.location = '../Login/Login.html'
-}
+if(localStorage.getItem("token")==undefined){
+  window.location="../Login/Login.html"
 
-function LogOut() {
+}
+ function LogOut() {
   localStorage.removeItem('token');
-  window.location = '../Login/Login.html'
+  window.location = "../Login/LogIn.html"
 }
 
-=======
->>>>>>> b0f1a103923c078f51eed526d9891b4f37675cfd
+
+
+
 upatedPage();
-
-
-
-
-
 // let x  = "";
 ////////////////////////////////////////////////////////////////////
  function rendercourses(data) {
@@ -66,7 +61,7 @@ console.log(data);
 
 function upatedPage() {
   let token = localStorage.getItem('id');
-console.log(token)
+// console.log(token)
   fetch('http://localhost:3000/courses/ngos/' + token,
   {
       method:'GET'
@@ -121,9 +116,5 @@ function showOneCourse(trg){
 
 
 }
-function LogOut() {
-  localStorage.removeItem('token');
-  window.location = "../Login/LogIn.html"
-}
-
+    
      

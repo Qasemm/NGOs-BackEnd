@@ -1,5 +1,14 @@
 url = window.location.href;
 console.log( getParameterByName("id", url));
+if(localStorage.getItem("token")==undefined){
+  window.location="../Login/Login.html"
+
+}
+ function LogOut() {
+  localStorage.removeItem('token');
+  window.location = "../Login/LogIn.html"
+}
+
 function getParameterByName(name, url) {
     
     name = name.replace(/[\[\]]/g, '\\$&');

@@ -1,12 +1,19 @@
-if(localStorage.getItem('token')==undefined){
-  window.location = '../Login/Login.html'
-}
 
-function LogOut() {
+
+
+if(localStorage.getItem("token")==undefined){
+  window.location="../Login/Login.html"
+
+}
+ function LogOut() {
   localStorage.removeItem('token');
-  window.location = '../Login/Login.html'
+  window.location = "../Login/LogIn.html"
 }
 
+
+
+
+ 
 
 let close_item = document.getElementsByClassName("remove");
 enable_close();

@@ -10,7 +10,10 @@ if(localStorage.getItem("token")==undefined){
   window.location="../Login/Login.html"
 
 }
-
+function logout(){
+  localStorage.removeItem("token")
+    window.location="../Login/Login.html"
+}
 let save_btn = document.getElementById('save');
 save_btn.style.display = "none";
 let ProfileImg = document.getElementById('preview').style.cursor = "pointer";
@@ -33,6 +36,7 @@ function change_value() {
     inputs[i].style.backgroundColor = "white";
 
     var fileTag = document.getElementById("filetag");
+    preview = document.getElementById("preview");
     fileTag.addEventListener("change", function () {
       changeImage(this);
       console.log(this)
@@ -85,7 +89,11 @@ function onload() {
   }).then(res => res.json()).then(data => {
     let preview = document.getElementById("preview");
     let dataNGO = data[0]
+    console.log(data)
+    ngoName.innerHTML = dataNGO.name
+    bio.innerHTML = dataNGO.bio
     email.value = dataNGO.email
+    url.value = dataNGO.website
     new_name.value=dataNGO.name
     preview.src="http://localhost:3000"+dataNGO.logo;
     //////////////////////////////////////////////
@@ -157,7 +165,3 @@ function updata_ngo() {
 
 
 
-function logout(){
-  localStorage.removeItem("token")
-    window.location="../Login/Login.html"
-}

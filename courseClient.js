@@ -6,19 +6,19 @@ const locations=document.getElementById('location');
 const range_weight=document.getElementById('range_weight');
 const desc=document.getElementById('desc');
  const trinername =document.getElementById('trinername');
-// function GettrainerName(){
-//     fetch('http://localhost:3000/trainer', {
-//         method: 'GET',
-//       })
-//         .then(Response =>
-//           Response.json())
-//         .then(data => {
-//           console.log(data);
-//             const htmlArray = data.map(trainer => '<select class="input" ><option  value="'+ trainer.name +'">Volvo</option> </select>');
+function GettrainerName(){
+    fetch('http://localhost:3000/trainer', {
+        method: 'GET',
+      })
+        .then(Response =>
+          Response.json())
+        .then(data => {
+          console.log(data);
+            const htmlArray = data.map(trainer => '<select class="input" ><option  value="'+ trainer.name +'">Volvo</option> </select>');
     
-//             document.getElementById("option_of_trainer").innerHTML += htmlArray.join('');
-//         });
-//     }
+            document.getElementById("option_of_trainer").innerHTML += htmlArray.join('');
+        });
+    }
 
 
 document.getElementById("save").addEventListener("click" , addCoures);
@@ -43,7 +43,7 @@ body:JSON.stringify({
 })
     }   
     ).then(res=>{
-        res.json()
+        res.jSON()
     })
     .then(data=>{
         console.log(data);
